@@ -1,18 +1,26 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Ramdon life The Sims 4</title>
+        <title>Ramdon Life The Sims 4</title>
         <link rel="stylesheet" href="/static/styles.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <script src="script.js"></script>
     </head>
     <body>
-        <h1>aviso, tenha todas as expansões e conteudos do jogo antes de rodar!</h1>
+        <h1>Aviso, este programa utiliza todas as expansões do jogo!</h1>
         <div class="columns">
-            <button id="show">exibir o oculto</button>
-            <div id="conteiner" class="container">
-                <h2>Resultado aleatorio</h2>
-                <input type="text" value="Resultado aleatorio" id="result">
-            </div>
+          <div id="conteiner" class="container">
+              <h2>Mapa Aleatório</h2>
+              <div id="animation" class="animation"></div>
+              <!-- <input type="text" id="resultado" readonly> -->
+              <button onclick="iniciarSorteio('mapa')">Iniciar Sorteio</button>
+          </div>
+              <div class="container2">
+                <h2>Personagem Aleatório</h2>
+                <div id="animationPersonagem" class="animation"></div>
+                <button onclick="iniciarSorteio('personagem')">Iniciar Sorteio</button>
+              </div>
         </div>
     </body>
 </html>

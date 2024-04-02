@@ -111,7 +111,7 @@ function escolherAleatoriamente(opcoes) {
     'Nudist hugout',
     'Paz e tranqui.',
     'Point dos universitarios',
-    'Ponto moviiment.',
+    'Ponto movimentado',
     'Encontro cães',
     'Encontro gatos',
     'Poço natural',
@@ -167,22 +167,9 @@ function escolherAleatoriamente(opcoes) {
   ];
 
   const desafios_lote = [
-    'Amaldiçoado',
-    'Assombrado',
-    'Atividade vulcanica',
-    'Capim das pradarias',
-    'Criaturas rastejantes',
-    'Fora da rede',
-    'Gremlins',
-    'Imundo',
-    'Lote de aterro',
-    'Mofo',
-    'Problema de manutenção',
-    'Raposas',
-    'Reduzir e reciclar',
-    'Repulsivo',
-    'Vida simples',
-    'Área de terremoto',
+    'Amaldiçoado', 'Assombrado', 'Atividade vulcanica', 'Capim das pradarias', 'Criaturas rastejantes',
+    'Fora da rede', 'Gremlins', 'Imundo', 'Lote de aterro', 'Mofo', 'Problema de manutenção', 'Raposas',
+    'Reduzir e reciclar', 'Repulsivo', 'Vida simples', 'Área de terremoto'
   ];
 
   function selecionarDesafios() {
@@ -208,113 +195,23 @@ function escolherAleatoriamente(opcoes) {
     '7',
   ];
   
-  const sexoChar = [
-    'Masculino',
-    'Feminino',
-    'Trans',
-  ];
-
-  const orientacao = [
-    'Hetero',
-    'Homoafetivo',
-    'Pansexual',
-    'Assexual',
-  ]
-
-  const idadeChar = [
-    'Bebe de colo',
-    'Bebe',
-    'Criança',
-    'Adolescente',
-    'Jovem adulto',
-    'Adulto',
-    'Idoso',
-  ];
-
-  const tipoSim = [
-    'Normal',
-    'Alienigena',
-    'Sereia',
-    'LobiSim',
-    'Vampiro',
-    'Feiticeiro',
-  ];
-
-  const aspiracao = [
-    'Romantica em serie',
-    'Alma gemêa',
-    'AmigO dos animais',
-    'Cavalgante',
-    'Esportes radicais',
-    'Fisiculturista',
-    'Cuidados pessoais',
-    'Paz interior',
-    'Guru zen',
-    'Mixologo',
-    'Produzir nectar',
-    'Ás dos eletrodomesticos',
-    'Chef mestre',
-    'Academica',
-    'Gênio da informatiica',
-    'Cerebro nerd',
-    'Feitiçaria magica',
-    'Mestre vampiro',
-    'Sim da renacença',
-    'Arqueologia',
-    'Gênio musical',
-    'Senhora do trico',
-    'Mestre da criação',
-    'Atriz magistral',
-    'Pintor',
-    'Best-seller',
-    'Caçadora de segredos',
-    'Amor do mal',
-    'inimigo publico',
-    'travessura',
-    'familia grande e feliz',
-    'familia vampiro',
-    'supermãe/pai',
-    'linhagem de sucesso',
-    'propietaria 5 estrelas',
-    'magnata do mercado',
-    'rico',
-    'barão das mansões',
-    'lobisim iniciante',
-    'conhecimento tomarang',
-    'impecavel',
-    'nativa da cidade',
-    'vida de praia',
-    'misterio em strangerville',
-    'turista em monte komorebi',
-    'incrivelmente imundo',
-    'exploradora da selva',
-    'inovadora ecologica',
-    'botanica autonoma',
-    'as da pesca',
-    'curadora',
-    'cuidadora do campo',
-    'ar livre',
-    'produtor de poçoes',
-    'grande festeira',
-    'vampiro do bem',
-    'lider do bando',
-    'estrela da comedia',
-    'amiga do mundo',
-    'habitante perspicaz',
-    'confidente vizinho',
-    'celebridade famosa',
-    'esperança ou ordem',
-    'corsaria galatica',
-  ];
-
-  function criarPersonagem() {
-    // Escolher aleatoriamente a quantidade de moradores
-    const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
+  const sexoChar = ['Masculino', 'Feminino', 'Trans'];
   
-    // Inicializar um array para armazenar os personagens
+  const orientacao = ['Hetero', 'Homoafetivo', 'Pansexual', 'Assexual'];
+  
+  const idadeChar = ['Bebe de colo', 'Bebe', 'Criança', 'Adolescente', 'Jovem adulto', 'Adulto', 'Idoso'];
+  
+  const tipoSim = ['Normal', 'Alienigena', 'Sereia', 'LobiSim', 'Vampiro', 'Feiticeiro'];
+  
+  const aspiracao = ['Romantica em serie', 'Alma gemêa', 'AmigO dos animais', 'Cavalgante', 'Esportes radicais', 'Fisiculturista', 'Cuidados pessoais', 'Paz interior', 'Guru zen',
+  'Mixologo', 'Produzir nectar', 'Ás dos eletrodomesticos', 'Chef mestre', 'Academica', 'Gênio da informatiica', 'Cerebro nerd', 'Feitiçaria magica', 'Mestre vampiro', 'Sim da renacença', 'Arqueologia', 'Gênio musical', 'Senhora do trico', 'Mestre da criação', 
+  'Atriz magistral', 'Pintor', 'Best-seller', 'Caçadora de segredos', 'Amor do mal', 'inimigo publico', 'travessura', 'familia grande e feliz', 'familia vampiro', 'supermãe/pai', 'linhagem de sucesso', 'propietaria 5 estrelas', 'magnata do mercado', 'rico', 'barão das mansões',
+  'lobisim iniciante', 'conhecimento tomarang', 'impecavel', 'nativa da cidade', 'vida de praia', 'misterio em strangerville', 'turista em monte komorebi', 'incrivelmente imundo', 'exploradora da selva', 'inovadora ecologica', 'botanica autonoma', 'as da pesca', 'curadora', 'cuidadora do campo',
+  'ar livre', 'produtor de poçoes', 'grande festeira', 'vampiro do bem', 'lider do bando', 'estrela da comedia', 'amiga do mundo', 'habitante perspicaz', 'confidente vizinho', 'celebridade famosa', 'esperança ou ordem', 'corsaria galatica'];
+
+  function criarPersonagens(quantidadeMoradores) {
     const personagens = [];
   
-    // Criar personagens para cada morador
     for (let i = 0; i < quantidadeMoradores; i++) {
       const personagem = {
         sexo: escolherAleatoriamente(sexoChar),
@@ -327,6 +224,91 @@ function escolherAleatoriamente(opcoes) {
     }
   
     return personagens;
+  }
+  
+
+  let sorteioIntervalOpcoes;
+  let sorteioIntervalPersonagem;
+  
+  function sortearOpcoes() {
+    const tempoSorteio = 5000; // 5 segundos de sorteio (5000 milissegundos)
+    const tempoTotal = Date.now() + tempoSorteio;
+  
+    sorteioIntervalOpcoes = setInterval(function() {
+      const opcoesSorteadas = {
+        mapa: mapas[Math.floor(Math.random() * mapas.length)],
+        terreno: terreno[Math.floor(Math.random() * terreno.length)],
+        tipo_lote: tipo_lote[Math.floor(Math.random() * tipo_lote.length)],
+        traco_lote: traco_lote[Math.floor(Math.random() * traco_lote.length)],
+        desafio_lote: desafios_lote[Math.floor(Math.random() * desafios_lote.length)]
+      };
+  
+      exibirAnimacao('animation', opcoesSorteadas);
+  
+      // Verificar se o tempo total já passou
+      if (Date.now() > tempoTotal) {
+        pararSorteio('mapa');
+      }
+    }, 100);
+  }
+  
+  function sortearPersonagem() {
+    const tempoSorteio = 5000; // 5 segundos de sorteio (5000 milissegundos)
+    const tempoTotal = Date.now() + tempoSorteio;
+  
+    sorteioIntervalPersonagem = setInterval(function() {
+      const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
+      const personagensSorteados = criarPersonagens(quantidadeMoradores);
+  
+      const animationDiv = document.getElementById('animationPersonagem');
+      animationDiv.innerHTML = '';
+  
+      personagensSorteados.forEach(personagem => {
+        const personagemDiv = document.createElement('div');
+        personagemDiv.classList.add('personagem');
+  
+        for (const key in personagem) {
+          const p = document.createElement('p');
+          p.textContent = `${key}: ${personagem[key]}`;
+          personagemDiv.appendChild(p);
+        }
+  
+        animationDiv.appendChild(personagemDiv);
+      });
+  
+      // Verificar se o tempo total já passou
+      if (Date.now() > tempoTotal) {
+        pararSorteio('personagem');
+      }
+    }, 100);
+  }
+
+  
+  function iniciarSorteio(tipo) {
+    if (tipo === 'mapa') {
+      sortearOpcoes();
+    } else if (tipo === 'personagem') {
+      sortearPersonagem();
+    }
+  }
+  
+  function pararSorteio(tipo) {
+    if (tipo === 'mapa') {
+      clearInterval(sorteioIntervalOpcoes);
+    } else if (tipo === 'personagem') {
+      clearInterval(sorteioIntervalPersonagem);
+    }
+  }
+  
+  function exibirAnimacao(elementId, opcoesSorteadas) {
+    const animationDiv = document.getElementById(elementId);
+    animationDiv.innerHTML = '';
+  
+    for (const key in opcoesSorteadas) {
+      const p = document.createElement('div');
+      p.textContent = `${opcoesSorteadas[key]}`;
+      animationDiv.appendChild(p);
+    }
   }
 
   const idadeCharRandom = escolherAleatoriamente(idadeChar);
