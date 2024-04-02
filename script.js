@@ -1,9 +1,9 @@
-const botao = document.getElementById('show');
-const minhaDiv = document.getElementById('conteiner');
+// const botao = document.getElementById('show');
+// const minhaDiv = document.getElementById('conteiner');
 
-botao.addEventListener('click', function() {
-    minhaDiv.style.display = 'block';
-});
+// botao.addEventListener('click', function() {
+//     minhaDiv.style.display = 'block';
+// });
 
 function escolherAleatoriamente(opcoes) {
     // Gere um índice aleatório dentro do intervalo do tamanho da matriz
@@ -125,6 +125,18 @@ function escolherAleatoriamente(opcoes) {
     'Ótimo solo',
   ];
 
+  function selecionarTracoLote() {
+    const quantidadeSelecionada = 3;
+    const tracosSelecionados = [];
+  
+    for (let i = 0; i < quantidadeSelecionada; i++) {
+      const tracoAleatorio = escolherAleatoriamente(traco_lote);
+      tracosSelecionados.push(tracoAleatorio);
+    }
+  
+    return tracosSelecionados;
+  }
+
   const orcamento = [
     '20 mil',
     '40 mil',
@@ -171,8 +183,158 @@ function escolherAleatoriamente(opcoes) {
     'Repulsivo',
     'Vida simples',
     'Área de terremoto',
+  ];
+
+  function selecionarDesafios() {
+    const quantidadeSelecionada = parseInt(escolherAleatoriamente(quant_desafios));
+    const desafiosSelecionados = [];
+
+    for (let i = 0; i < quantidadeSelecionada; i++) {
+      const desafioAleatorio = escolherAleatoriamente(desafios_lote);
+      desafiosSelecionados.push(desafioAleatorio);
+    }
+  
+    return desafiosSelecionados;
+  }
+
+
+  const quant_moradores = [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+  ];
+  
+  const sexoChar = [
+    'Masculino',
+    'Feminino',
+    'Trans',
+  ];
+
+  const orientacao = [
+    'Hetero',
+    'Homoafetivo',
+    'Pansexual',
+    'Assexual',
   ]
 
+  const idadeChar = [
+    'Bebe de colo',
+    'Bebe',
+    'Criança',
+    'Adolescente',
+    'Jovem adulto',
+    'Adulto',
+    'Idoso',
+  ];
+
+  const tipoSim = [
+    'Normal',
+    'Alienigena',
+    'Sereia',
+    'LobiSim',
+    'Vampiro',
+    'Feiticeiro',
+  ];
+
+  const aspiracao = [
+    'Romantica em serie',
+    'Alma gemêa',
+    'AmigO dos animais',
+    'Cavalgante',
+    'Esportes radicais',
+    'Fisiculturista',
+    'Cuidados pessoais',
+    'Paz interior',
+    'Guru zen',
+    'Mixologo',
+    'Produzir nectar',
+    'Ás dos eletrodomesticos',
+    'Chef mestre',
+    'Academica',
+    'Gênio da informatiica',
+    'Cerebro nerd',
+    'Feitiçaria magica',
+    'Mestre vampiro',
+    'Sim da renacença',
+    'Arqueologia',
+    'Gênio musical',
+    'Senhora do trico',
+    'Mestre da criação',
+    'Atriz magistral',
+    'Pintor',
+    'Best-seller',
+    'Caçadora de segredos',
+    'Amor do mal',
+    'inimigo publico',
+    'travessura',
+    'familia grande e feliz',
+    'familia vampiro',
+    'supermãe/pai',
+    'linhagem de sucesso',
+    'propietaria 5 estrelas',
+    'magnata do mercado',
+    'rico',
+    'barão das mansões',
+    'lobisim iniciante',
+    'conhecimento tomarang',
+    'impecavel',
+    'nativa da cidade',
+    'vida de praia',
+    'misterio em strangerville',
+    'turista em monte komorebi',
+    'incrivelmente imundo',
+    'exploradora da selva',
+    'inovadora ecologica',
+    'botanica autonoma',
+    'as da pesca',
+    'curadora',
+    'cuidadora do campo',
+    'ar livre',
+    'produtor de poçoes',
+    'grande festeira',
+    'vampiro do bem',
+    'lider do bando',
+    'estrela da comedia',
+    'amiga do mundo',
+    'habitante perspicaz',
+    'confidente vizinho',
+    'celebridade famosa',
+    'esperança ou ordem',
+    'corsaria galatica',
+  ];
+
+  function criarPersonagem() {
+    // Escolher aleatoriamente a quantidade de moradores
+    const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
+  
+    // Inicializar um array para armazenar os personagens
+    const personagens = [];
+  
+    // Criar personagens para cada morador
+    for (let i = 0; i < quantidadeMoradores; i++) {
+      const personagem = {
+        sexo: escolherAleatoriamente(sexoChar),
+        orientacao: escolherAleatoriamente(orientacao),
+        idade: escolherAleatoriamente(idadeChar),
+        tipo: escolherAleatoriamente(tipoSim),
+        aspiracao: escolherAleatoriamente(aspiracao),
+      };
+      personagens.push(personagem);
+    }
+  
+    return personagens;
+  }
+
+  const idadeCharRandom = escolherAleatoriamente(idadeChar);
+  const tipoSimRandom = escolherAleatoriamente(tipoSim);
+  const aspiracaoRandom = escolherAleatoriamente(aspiracao);
+  const orientacaoRandom = escolherAleatoriamente(orientacao);
+  const quantMoradoresRandom = escolherAleatoriamente(quant_moradores);
+  const sexoCharRandom = escolherAleatoriamente(sexoChar);
   const TerrenoRandom = escolherAleatoriamente(terreno);
   const OrcamentoRandom = escolherAleatoriamente(orcamento);
   const MapaRandom = escolherAleatoriamente(mapas);
@@ -180,8 +342,12 @@ function escolherAleatoriamente(opcoes) {
   const TracoLoteRandom = escolherAleatoriamente(traco_lote);
   const QuantDesafioRandom = escolherAleatoriamente(quant_desafios);
   const DesafiosLoteRandom = escolherAleatoriamente(desafios_lote);
-  console.loge(DesafiosLoteRandom);
-  console.log(QuantDesafioRandom);
+  const desafiosSelecionados = selecionarDesafios();
+  const personagensGerados = criarPersonagem();
+  const tracosSelecionados = selecionarTracoLote();
+  console.log(tracosSelecionados);
+  console.log(personagensGerados);
+  console.log(desafiosSelecionados);
   console.log(MapaRandom);
   console.log(TerrenoRandom);
   console.log(TipoLoteRandom);
