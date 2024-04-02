@@ -231,26 +231,47 @@ function escolherAleatoriamente(opcoes) {
   let sorteioIntervalPersonagem;
   
   function sortearOpcoes() {
-    const tempoSorteio = 5000; // 5 segundos de sorteio (5000 milissegundos)
+    const tempoSorteio = 3000; // 5 segundos de sorteio (5000 milissegundos)
     const tempoTotal = Date.now() + tempoSorteio;
   
     sorteioIntervalOpcoes = setInterval(function() {
       const opcoesSorteadas = {
-        mapa: mapas[Math.floor(Math.random() * mapas.length)],
-        terreno: terreno[Math.floor(Math.random() * terreno.length)],
-        tipo_lote: tipo_lote[Math.floor(Math.random() * tipo_lote.length)],
-        traco_lote: traco_lote[Math.floor(Math.random() * traco_lote.length)],
-        desafio_lote: desafios_lote[Math.floor(Math.random() * desafios_lote.length)]
+        mapa: escolherAleatoriamente(mapas),
+        terreno: escolherAleatoriamente(terreno),
+        tipo_lote: escolherAleatoriamente(tipo_lote),
+        traco_lote: escolherAleatoriamente(traco_lote),
+        desafio_lote: escolherAleatoriamente(desafios_lote)
       };
   
-      exibirAnimacao('animation', opcoesSorteadas);
+      exibirAnimacaoPorSorteio(opcoesSorteadas);
   
       // Verificar se o tempo total já passou
       if (Date.now() > tempoTotal) {
-        pararSorteio('mapa');
+        clearInterval(sorteioIntervalOpcoes);
       }
     }, 100);
   }
+  
+  function exibirAnimacaoPorSorteio(opcoesSorteadas) {
+    const animationDiv = document.getElementById('animation');
+    animationDiv.innerHTML = '';
+  
+    for (const sorteio in opcoesSorteadas) {
+      const sorteioDiv = document.createElement('div');
+      sorteioDiv.classList.add('sorteio');
+  
+      const titulo = document.createElement('h3');
+      titulo.textContent = sorteio + ':';
+      sorteioDiv.appendChild(titulo);
+  
+      const resultado = document.createElement('p');
+      resultado.textContent = opcoesSorteadas[sorteio];
+      sorteioDiv.appendChild(resultado);
+  
+      animationDiv.appendChild(sorteioDiv);
+    }
+  }
+  
   
   function sortearPersonagem() {
     const tempoSorteio = 5000; // 5 segundos de sorteio (5000 milissegundos)
@@ -306,7 +327,7 @@ function escolherAleatoriamente(opcoes) {
   
     for (const key in opcoesSorteadas) {
       const p = document.createElement('div');
-      p.textContent = `${opcoesSorteadas[key]}`;
+      p.textContent = `${key}${opcoesSorteadas[key]}`;
       animationDiv.appendChild(p);
     }
   }
