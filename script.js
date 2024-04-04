@@ -316,7 +316,7 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
 }
   
   function sortearPersonagem() {
-    const tempoSorteio = 5000; // 5 segundos de sorteio (5000 milissegundos)
+    const tempoSorteio = 3000; // 5 segundos de sorteio (5000 milissegundos)
     const tempoTotal = Date.now() + tempoSorteio;
   
     sorteioIntervalPersonagem = setInterval(function() {

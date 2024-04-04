@@ -1,24 +1,36 @@
+html{
+    background-color: #37663d;
+}
+
 .header {
-    background-color: #0b961d;
+    background-color: #237a2e;
     color: #fff;
     text-align: center;
     padding: 10px;
     border-radius: 10px;
     margin-bottom: 20px;
+    display: flex; 
+    justify-content: space-between;
 }
 
-.container {
-    background-color: #0ca320;
-    color: rgb(255, 255, 255);
-    text-align: center;
+.logo{
+    width: 100px;
+}
+
+
+.warning {
+    background-color: #f8d7da;
+    color: #721c24;
     padding: 10px;
-    border-radius: 10px;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+body {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    margin: 20px;
-    flex-grow: 2;
-
+    min-height: 100vh; /* Garante que o corpo da página tenha pelo menos a altura da janela de visualização */
 }
 
 button{
@@ -41,6 +53,34 @@ button:hover {
     gap: 20px;
 }
 
+
+.container1 {
+    background-color: #4fa75a;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    flex-grow: 1;
+}
+
+.container {
+    background-color: #4fa75a;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    flex-grow: 1;
+}
+
+
 .animation {
     font-size: 20px;
     font-weight: bold;
@@ -48,6 +88,9 @@ button:hover {
     border: 2px solid #228848;
     border-radius: 10px;
     margin-bottom: 10px;
+    display: flex; 
+    justify-content: space-between;
+
 }
 
 .animation p {
@@ -59,3 +102,39 @@ button:hover {
     padding: 10px;
     margin-bottom: 10px;
 }
+
+
+.footer {
+    margin-top: auto;
+    background-color: #237a2e;
+    color: #fff;
+    text-align: center;
+    display: flex; 
+    justify-content: space-between;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    /* Adicionando sombra para dar profundidade */
+    box-shadow: 0px -5px 15px rgba(0, 0, 0, 0.5);
+}
+
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-media img {
+    width: 30px;
+}
+
+.social-media a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.social-media a:hover {
+    text-decoration: underline;
+}
+
