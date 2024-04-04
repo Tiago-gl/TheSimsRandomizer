@@ -21,6 +21,20 @@
 
 }
 
+button{
+    background-color: #228848;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 10px;
+}
+
+button:hover {
+    background-color: #33bb45;
+}
+
 .columns {
     display: flex;
     justify-content: center;
