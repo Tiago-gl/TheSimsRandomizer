@@ -82,25 +82,24 @@ function escolherAleatoriamente(opcoes) {
     Aspecto_ensolarado : 'img/traco_lote/Trait_TS4_Sunny_Aspect.webp',
     Aura_romantica : 'img/traco_lote/Trait_TS4_Romantic_Aura.webp',
     Boas_aulas : 'img/traco_lote/Trait_TS4_Bookworm.webp',
-    Brincadeira : 'img/traco_lote/Trait_TS4_Child%27s_Play.webp',
+    Brincadeira : 'img/traco_lote/Trait_TS4_Child27s_Play.webp',
     Brisa_revigorante : 'img/traco_lote/Trait_TS4_Breezing_Braces.webp',
     Casa_de_celebridade : 'img/traco_lote/Trait_TS4_Celebrity_Home.webp',
     Casual_nudety : 'img/traco_lote/Trait_TS4_Clothing_Optional.webp',
     Conexão_vampirica : 'img/traco_lote/Trait_TS4_Vampire_Nexus.webp',
     Covil_de_ciencia : 'img/traco_lote/Trait_TS4_Science_Lair.webp',
     Covil_vampirico_registrado : 'img/traco_lote/Trait_TS4_Vampire_Lair.webp',
-    Caozinha_do_chef: 'img/traco_lote/Trait_TS4_Chef%27s_Kitchen.webp',
+    Caozinha_do_chef: 'img/traco_lote/Trait_TS4_Chef27s_Kitchen.webp',
     Domestico: 'img/traco_lote/Trait_TS4_Domestic.webp',
     Linha_ley: 'img/traco_lote/Trait_TS4_On_Ley_Line.webp',
     Linha_ley_sombria: 'img/traco_lote/TS4_Trait_On_A_Dark_Ley_Line.webp',
     Espiritos: 'img/traco_lote/Trait_TS4_Island_Spirits.webp',
     Estudio_domestico: 'img/traco_lote/Trait_TS4_Home_Studio.webp',
     Fada_das_moedas: 'img/traco_lote/Trait_TS4_Penny_Pixies.webp',
-    Frequente_animal_attacks: '',
     Geotermico: 'img/traco_lote/Trait_TS4_Geothermal.webp',
     Gnomos: 'img/traco_lote/Trait_TS4_Gnomes.webp',
     Habitação_particular: 'img/traco_lote/Trait_TS4_Private_Dwelling.webp',
-    Hypersexual: '',
+    Hypersexual: 'img/traco_lote/28The_Sims_429.webp',
     Internet_rapida: 'img/traco_lote/Trait_TS4_Fast_Internet.webp',
     Local_de_estudo: 'img/traco_lote/Trait_TS4_Study_Spot.webp',
     Local_de_festas: 'img/traco_lote/Trait_TS4_Party_Place.webp',
@@ -168,34 +167,48 @@ function escolherAleatoriamente(opcoes) {
 
   const desafios_lote = {
     Amaldiçoado: 'img/desafio_lote/Trait_TS4_Cursed.webp',
-    Assombrado: 'path/to/Assombrado.png',
-    'Atividade vulcanica': 'path/to/AtividadeVulcanica.png',
-    'Capim das pradarias': 'path/to/CapimDasPradarias.png',
-    'Criaturas rastejantes': 'path/to/CriaturasRastejantes.png',
-    'Fora da rede': 'path/to/ForaDaRede.png',
-    Gremlins: 'path/to/Gremlins.png',
-    Imundo: 'path/to/Imundo.png',
-    'Lote de aterro': 'path/to/LoteDeAterro.png',
-    Mofo: 'path/to/Mofo.png',
-    'Problema de manutenção': 'path/to/ProblemaDeManutencao.png',
-    Raposas: 'path/to/Raposas.png',
-    'Reduzir e reciclar': 'path/to/ReduzirEReciclar.png',
-    Repulsivo: 'path/to/Repulsivo.png',
-    'Vida simples': 'path/to/VidaSimples.png',
-    'Área de terremoto': 'path/to/AreaDeTerremoto.png'
+    Assombrado: 'img/desafio_lote/TS4_Ghost_Icon.webp',
+    Atividade_vulcanica: 'img/desafio_lote/Trait_TS4_Volcanic_Activity.webp',
+    Capim_das_pradarias: 'img/desafio_lote/Trait_TS4_Wild_Prairie_Grass.webp',
+    Criaturas_rastejantes: 'img/desafio_lote/Trait_TS4_Creepy_Crawlies.webp',
+    Fora_da_rede: 'img/desafio_lote/New_TS4_Off-The-Grid.webp',
+    Gremlins: 'img/desafio_lote/Trait_TS4_Gremlin.webp',
+    Imundo: 'img/desafio_lote/Trait_TS4_Filthy.webp',
+    Lote_de_aterro: 'img/desafio_lote/Trait_TS4_Landfill_Lot.webp',
+    Mofo: 'img/desafio_lote/Tra3Fo_de_lote_Mofo.webp',
+    Problema_de_manutenção: 'img/desafio_lote/Tra3F3Fo.webp',
+    Raposas: 'img/desafio_lote/Trait_TS4_Wild_Foxes.webp',
+    Reduzir_e_reciclar: 'img/desafio_lote/Trait_TS4_Eco_Master.webp',
+    Repulsivo: 'img/desafio_lote/Trait_TS4_Slob.webp',
+    Vida_simples: 'img/desafio_lote/Trait_TS4_Simple_Living.webp',
+    Área_de_terremoto: 'img/desafio_lote/Trait_TS4_Quake_Zone.webp'
   };
 
   function selecionarDesafios() {
     const quantidadeSelecionada = parseInt(escolherAleatoriamente(quant_desafios));
+    const desafiosDisponiveis = Object.keys(desafios_lote);
     const desafiosSelecionados = [];
 
     for (let i = 0; i < quantidadeSelecionada; i++) {
-      const desafioAleatorio = escolherAleatoriamente(desafios_lote);
-      desafiosSelecionados.push(desafioAleatorio);
+        // Remover desafios já sorteados da lista de desafios disponíveis
+        const desafiosRestantes = desafiosDisponiveis.filter(desafio => !desafiosSelecionados.map(d => d.nome).includes(desafio));
+        
+        // Se não houver desafios restantes, interromper o loop
+        if (desafiosRestantes.length === 0) break;
+        
+        // Selecionar aleatoriamente um desafio dos desafios restantes
+        const desafioAleatorio = escolherAleatoriamente(desafiosRestantes);
+        
+        // Adicionar o desafio selecionado à lista de desafios selecionados
+        const desafio = {
+            nome: desafioAleatorio,
+            imagem: desafios_lote[desafioAleatorio]
+        };
+        desafiosSelecionados.push(desafio);
     }
-  
+
     return desafiosSelecionados;
-  }
+}
 
 
   const quant_moradores = [
@@ -206,13 +219,14 @@ function escolherAleatoriamente(opcoes) {
     '5',
     '6',
     '7',
+    '8',
   ];
   
-  const sexoChar = ['Masculino', 'Feminino', 'Trans'];
+  const sexoChar = ['Masculino', 'Feminino'];
   
   const orientacao = ['Hetero', 'Homoafetivo', 'Pansexual', 'Assexual'];
   
-  const idadeChar = ['Bebe de colo', 'Bebe', 'Criança', 'Adolescente', 'Jovem adulto', 'Adulto', 'Idoso'];
+  const idadeChar = ['Bebê de colo', 'Bebê', 'Criança', 'Adolescente', 'Jovem adulto', 'Adulto', 'Idoso'];
   
   const tipoSim = ['Normal', 'Alienigena', 'Sereia', 'LobiSim', 'Vampiro', 'Feiticeiro'];
   
@@ -222,22 +236,40 @@ function escolherAleatoriamente(opcoes) {
   'lobisim iniciante', 'conhecimento tomarang', 'impecavel', 'nativa da cidade', 'vida de praia', 'misterio em strangerville', 'turista em monte komorebi', 'incrivelmente imundo', 'exploradora da selva', 'inovadora ecologica', 'botanica autonoma', 'as da pesca', 'curadora', 'cuidadora do campo',
   'ar livre', 'produtor de poçoes', 'grande festeira', 'vampiro do bem', 'lider do bando', 'estrela da comedia', 'amiga do mundo', 'habitante perspicaz', 'confidente vizinho', 'celebridade famosa', 'esperança ou ordem', 'corsaria galatica'];
 
-  function criarPersonagens(quantidadeMoradores) {
-    const personagens = [];
-  
-    for (let i = 0; i < quantidadeMoradores; i++) {
-      const personagem = {
-        sexo: escolherAleatoriamente(sexoChar),
-        orientacao: escolherAleatoriamente(orientacao),
-        idade: escolherAleatoriamente(idadeChar),
-        tipo: escolherAleatoriamente(tipoSim),
-        aspiracao: escolherAleatoriamente(aspiracao),
-      };
-      personagens.push(personagem);
-    }
-  
-    return personagens;
+const aspiracaoChild = [
+  'Prodígio Artístico', 'Jovem Gênio', 'Capitão Brincadeira', 'Gênia Criativa', 'Estrela da Festa de pijama',
+  'Corpo e Mente', 'Pestinha Agitada', 'Borboleta Social',
+]
+
+function escolherOrientacao(idade) {
+  // Se a idade for "Bebê", "Bebê de Colo" ou "Criança", retornar vazio
+  if (idade === 'Bebê' || idade === 'Bebê de colo' || idade === 'Criança') {
+      return '';
+  } else {
+      return escolherAleatoriamente(orientacao);
   }
+}
+
+function criarPersonagens(quantidadeMoradores) {
+  const personagens = [];
+
+  for (let i = 0; i < quantidadeMoradores; i++) {
+    const idade = escolherAleatoriamente(idadeChar);
+    const orientacao = escolherOrientacao(idade);
+
+    const personagem = {
+      sexo: escolherAleatoriamente(sexoChar),
+      orientacao: orientacao,
+      idade: idade,
+      tipo: escolherAleatoriamente(tipoSim),
+      aspiracao: escolherAleatoriamente(aspiracao),
+    };
+    personagens.push(personagem);
+  }
+
+  return personagens;
+}
+
   
 
   let sorteioIntervalOpcoes;
@@ -253,7 +285,8 @@ function escolherAleatoriamente(opcoes) {
         Terreno: escolherAleatoriamente(terreno),
         Tipo: escolherAleatoriamente(tipo_lote),
         Traços: selecionarTracoLote(),
-        Desafios: escolherAleatoriamente(desafios_lote)
+        Desafios: selecionarDesafios(),
+        Orcamento: escolherAleatoriamente(orcamento),
       };
   
       exibirAnimacaoPorSorteio(opcoesSorteadas);
@@ -305,6 +338,13 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
                   // tracoNome.textContent = traco;
                   // sorteioDiv.appendChild(tracoNome);
               }
+          } 
+        } else if (sorteio === 'Desafios') {
+          const desafios = opcoesSorteadas[sorteio];
+          for (const desafio of desafios) {
+              const desafioImagem = document.createElement('img');
+              desafioImagem.src = desafio.imagem;
+              sorteioDiv.appendChild(desafioImagem);
           }
       } else {
           resultado.textContent = opcoesSorteadas[sorteio];
