@@ -12,31 +12,30 @@ function escolherAleatoriamente(opcoes) {
     return opcoes[indiceAleatorio];
   }
 
-  const mapas = [
-    'Willow Creek',
-    'Oasis Spring',
-    'Newcrest',
-    'Magnolia Promade',
-    'Windmburg',
-    'San Myshuno',
-    'Forgotten Hollow',
-    'Bridleton Bay',
-    'Del Soy Valley',
-    'Strangerville',
-    'Sulani',
-    'Glimmerbook',
-    'Britechester',
-    'Evergreen harbor',
-    'Monte komorebi',
-    'Avelandia do norte',
-    'Tartosa',
-    'Moonwood mill',
-    'Copperdale',
-    'San sequoia',
-    'Serra das castanheiras',
-    'Tomarang',
-  ];
-
+  const mapas = {
+    WillowCreek: 'path/to/WillowCreek.png',
+    OasisSpring: 'path/to/OasisSpring.png',
+    Newcrest: 'path/to/Newcrest.png',
+    MagnoliaPromade: 'path/to/MagnoliaPromade.png',
+    Windmburg: 'path/to/Windmburg.png',
+    SanMyshuno: 'path/to/SanMyshuno.png',
+    ForgottenHollow: 'path/to/ForgottenHollow.png',
+    BridletonBay: 'path/to/BridletonBay.png',
+    DelSoyValley: 'path/to/DelSoyValley.png',
+    Strangerville: 'path/to/Strangerville.png',
+    Sulani: 'path/to/Sulani.png',
+    Glimmerbook: 'path/to/Glimmerbook.png',
+    Britechester: 'path/to/Britechester.png',
+    EvergreenHarbor: 'path/to/EvergreenHarbor.png',
+    MonteKomorebi: 'path/to/MonteKomorebi.png',
+    AvelandiaDoNorte: 'path/to/AvelandiaDoNorte.png',
+    Tartosa: 'path/to/Tartosa.png',
+    MoonwoodMill: 'path/to/MoonwoodMill.png',
+    Copperdale: 'path/to/Copperdale.png',
+    SanSequoia: 'path/to/SanSequoia.png',
+    SerraDasCastanheiras: 'path/to/SerraDasCastanheiras.png',
+    Tomarang: 'path/to/Tomarang.png',
+  };
   const terreno = [
     'Pequeno',
     'Medio',
@@ -77,53 +76,53 @@ function escolherAleatoriamente(opcoes) {
     'Área de convivência foxbury',
   ];
 
-  const traco_lote = [
-    'Acustica excelente',
-    'Ambiente agradavel',
-    'Aspecto ensolarado',
-    'Aura romantica',
-    'Boas aulas',
-    'Brincadeira',
-    'Brisa revigorante',
-    'Casa de celebridade',
-    'Casual nudety',
-    'Conexão vampirica',
-    'Covil de ciencia',
-    'Covil vampirico registrado',
-    'Caozinha do chef',
-    'Domestico',
-    'Linha ley',
-    'Linha ley sombria',
-    'Espiritos',
-    'Estudio domestico',
-    'Fada das moedas',
-    'Frequente animal attacks',
-    'Geotermico',
-    'Gnomos',
-    'Habitação particular',
-    'Hypersexual',
-    'Internet rapida',
-    'Local de estudo',
-    'Local de festas',
-    'Local ecologico',
-    'Luz natural',
-    'Melhor ponto da ciidade',
-    'Nudist hugout',
-    'Paz e tranqui.',
-    'Point dos universitarios',
-    'Ponto movimentado',
-    'Encontro cães',
-    'Encontro gatos',
-    'Poço natural',
-    'Recebe cães',
-    'Recebe gatos',
-    'Roupas ocasionais',
-    'Vibração maldosa',
-    'Vizinhança adolecente',
-    'Área de reprodução',
-    'Área de treinamento',
-    'Ótimo solo',
-  ];
+  const traco_lote = {
+    Acustica_excelente : 'img/traco_lote/Trait_TS4_Great_Acoustics.webp',
+    Ambiente_agradavel : 'img/traco_lote/Trait_TS4_Convival.webp',
+    Aspecto_ensolarado : 'img/traco_lote/Trait_TS4_Sunny_Aspect.webp',
+    Aura_romantica : 'img/traco_lote/Trait_TS4_Romantic_Aura.webp',
+    Boas_aulas : 'img/traco_lote/Trait_TS4_Bookworm.webp',
+    Brincadeira : 'img/traco_lote/Trait_TS4_Child%27s_Play.webp',
+    Brisa_revigorante : 'img/traco_lote/Trait_TS4_Breezing_Braces.webp',
+    Casa_de_celebridade : 'img/traco_lote/Trait_TS4_Celebrity_Home.webp',
+    Casual_nudety : 'img/traco_lote/Trait_TS4_Clothing_Optional.webp',
+    Conexão_vampirica : 'img/traco_lote/Trait_TS4_Vampire_Nexus.webp',
+    Covil_de_ciencia : 'img/traco_lote/Trait_TS4_Science_Lair.webp',
+    Covil_vampirico_registrado : '',
+    Caozinha_do_chef,
+    Domestico,
+    Linha ley,
+    Linha ley sombria,
+    Espiritos,
+    Estudio domestico,
+    Fada das moedas,
+    Frequente animal attacks,
+    Geotermico,
+    Gnomos,
+    Habitação particular,
+    Hypersexual,
+    Internet rapida,
+    Local de estudo,
+    Local de festas,
+    Local ecologico,
+    Luz natural,
+    Melhor ponto da ciidade,
+    Nudist hugout,
+    Paz e tranqui.,
+    Point dos universitarios,
+    Ponto movimentado,
+    Encontro cães,
+    Encontro gatos,
+    Poço natural,
+    Recebe cães,
+    Recebe gatos,
+    Roupas ocasionais,
+    Vibração maldosa,
+    Vizinhança adolecente,
+    Área de reprodução,
+    Área de treinamento,
+    Ótimo solo,
+  };
 
   function selecionarTracoLote() {
     const quantidadeSelecionada = 3;
@@ -166,11 +165,24 @@ function escolherAleatoriamente(opcoes) {
     '16',
   ];
 
-  const desafios_lote = [
-    'Amaldiçoado', 'Assombrado', 'Atividade vulcanica', 'Capim das pradarias', 'Criaturas rastejantes',
-    'Fora da rede', 'Gremlins', 'Imundo', 'Lote de aterro', 'Mofo', 'Problema de manutenção', 'Raposas',
-    'Reduzir e reciclar', 'Repulsivo', 'Vida simples', 'Área de terremoto'
-  ];
+  const desafios_lote = {
+    Amaldiçoado: 'path/to/Amaldiçoado.png',
+    Assombrado: 'path/to/Assombrado.png',
+    'Atividade vulcanica': 'path/to/AtividadeVulcanica.png',
+    'Capim das pradarias': 'path/to/CapimDasPradarias.png',
+    'Criaturas rastejantes': 'path/to/CriaturasRastejantes.png',
+    'Fora da rede': 'path/to/ForaDaRede.png',
+    Gremlins: 'path/to/Gremlins.png',
+    Imundo: 'path/to/Imundo.png',
+    'Lote de aterro': 'path/to/LoteDeAterro.png',
+    Mofo: 'path/to/Mofo.png',
+    'Problema de manutenção': 'path/to/ProblemaDeManutencao.png',
+    Raposas: 'path/to/Raposas.png',
+    'Reduzir e reciclar': 'path/to/ReduzirEReciclar.png',
+    Repulsivo: 'path/to/Repulsivo.png',
+    'Vida simples': 'path/to/VidaSimples.png',
+    'Área de terremoto': 'path/to/AreaDeTerremoto.png'
+  };
 
   function selecionarDesafios() {
     const quantidadeSelecionada = parseInt(escolherAleatoriamente(quant_desafios));
@@ -332,27 +344,3 @@ function escolherAleatoriamente(opcoes) {
     }
   }
 
-  const idadeCharRandom = escolherAleatoriamente(idadeChar);
-  const tipoSimRandom = escolherAleatoriamente(tipoSim);
-  const aspiracaoRandom = escolherAleatoriamente(aspiracao);
-  const orientacaoRandom = escolherAleatoriamente(orientacao);
-  const quantMoradoresRandom = escolherAleatoriamente(quant_moradores);
-  const sexoCharRandom = escolherAleatoriamente(sexoChar);
-  const TerrenoRandom = escolherAleatoriamente(terreno);
-  const OrcamentoRandom = escolherAleatoriamente(orcamento);
-  const MapaRandom = escolherAleatoriamente(mapas);
-  const TipoLoteRandom = escolherAleatoriamente(tipo_lote);
-  const TracoLoteRandom = escolherAleatoriamente(traco_lote);
-  const QuantDesafioRandom = escolherAleatoriamente(quant_desafios);
-  const DesafiosLoteRandom = escolherAleatoriamente(desafios_lote);
-  const desafiosSelecionados = selecionarDesafios();
-  const personagensGerados = criarPersonagem();
-  const tracosSelecionados = selecionarTracoLote();
-  console.log(tracosSelecionados);
-  console.log(personagensGerados);
-  console.log(desafiosSelecionados);
-  console.log(MapaRandom);
-  console.log(TerrenoRandom);
-  console.log(TipoLoteRandom);
-  console.log(TracoLoteRandom);
-  console.log(OrcamentoRandom);
