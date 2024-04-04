@@ -1,5 +1,6 @@
 html{
     background-color: #37663d;
+    overflow: hidden;
 }
 
 .header {
@@ -17,12 +18,20 @@ html{
     width: 100px;
 }
 
-
 .warning {
     background-color: #f8d7da;
     color: #721c24;
     padding: 10px;
     border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+.dica{
+    background-color: #d1ecf1;
+    color: #0c5460;
+    padding: 10px;
+    border: 1px solid #bee5eb;
     border-radius: 5px;
     margin: 10px;
 }
@@ -90,7 +99,6 @@ button:hover {
     margin-bottom: 10px;
     display: flex; 
     justify-content: space-between;
-
 }
 
 .animation p {
@@ -138,3 +146,32 @@ button:hover {
     text-decoration: underline;
 }
 
+/* Responsiveness for mobile devices */
+@media only screen and (max-width: 600px) {
+    html{
+        overflow: auto;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo {
+        margin-bottom: 10px;
+    }
+
+    .columns {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .container1,
+    .container {
+        margin: 10px;
+    }
+
+    .animation {
+        display: block;
+    }
+}

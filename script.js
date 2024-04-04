@@ -303,55 +303,58 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
   animationDiv.innerHTML = '';
 
   for (const sorteio in opcoesSorteadas) {
-      const sorteioDiv = document.createElement('div');
-      sorteioDiv.classList.add('sorteio');
+    const sorteioDiv = document.createElement('div');
+    sorteioDiv.classList.add('sorteio');
 
-      const titulo = document.createElement('h3');
-      titulo.textContent = sorteio + ':';
-      sorteioDiv.appendChild(titulo);
+    const titulo = document.createElement('h3');
+    titulo.textContent = sorteio + ':';
+    sorteioDiv.appendChild(titulo);
 
-      const resultado = document.createElement('p');
+    const resultado = document.createElement('p');
 
-      // Verificar se o sorteio é Mapa
-      if (sorteio === 'Mapa') {
-          const mapa = opcoesSorteadas[sorteio];
-          // Verificar se o mapa existe na lista de mapas
-          if (mapas.hasOwnProperty(mapa)) {
-              const mapaImagem = document.createElement('img');
-              mapaImagem.src = mapas[mapa];
-              sorteioDiv.appendChild(mapaImagem);
+    // Verificar se o sorteio é Mapa
+    if (sorteio === 'Mapa') {
+      const mapa = opcoesSorteadas[sorteio];
+      // Verificar se o mapa existe na lista de mapas
+      if (mapas.hasOwnProperty(mapa)) {
+        const mapaImagem = document.createElement('img');
+        mapaImagem.src = mapas[mapa];
+        mapaImagem.title = mapa;
+        sorteioDiv.appendChild(mapaImagem);
 
-              // const mapaNome = document.createElement('p');
-              // mapaNome.textContent = mapa;
-              // sorteioDiv.appendChild(mapaNome);
-          }
-      } else if (sorteio === 'Traços') {
-          const tracos = opcoesSorteadas[sorteio];
-          for (const traco of tracos) {
-              // Verificar se o traco existe na lista de traços e tem uma imagem associada
-              if (traco_lote.hasOwnProperty(traco)) {
-                  const tracoImagem = document.createElement('img');
-                  tracoImagem.src = traco_lote[traco];
-                  sorteioDiv.appendChild(tracoImagem);
-
-                  // const tracoNome = document.createElement('p');
-                  // tracoNome.textContent = traco;
-                  // sorteioDiv.appendChild(tracoNome);
-              }
-          } 
-        } else if (sorteio === 'Desafios') {
-          const desafios = opcoesSorteadas[sorteio];
-          for (const desafio of desafios) {
-              const desafioImagem = document.createElement('img');
-              desafioImagem.src = desafio.imagem;
-              sorteioDiv.appendChild(desafioImagem);
-          }
-      } else {
-          resultado.textContent = opcoesSorteadas[sorteio];
-          sorteioDiv.appendChild(resultado);
+        // const mapaNome = document.createElement('p');
+        // mapaNome.textContent = mapa;
+        // sorteioDiv.appendChild(mapaNome);
       }
+    } else if (sorteio === 'Traços') {
+        const tracos = opcoesSorteadas[sorteio];
+        for (const traco of tracos) {
+            // Verificar se o traco existe na lista de traços e tem uma imagem associada
+            if (traco_lote.hasOwnProperty(traco)) {
+                const tracoImagem = document.createElement('img');
+                tracoImagem.src = traco_lote[traco];
+                tracoImagem.title = traco;
+                sorteioDiv.appendChild(tracoImagem);
 
-      animationDiv.appendChild(sorteioDiv);
+                // const tracoNome = document.createElement('p');
+                // tracoNome.textContent = traco;
+                // sorteioDiv.appendChild(tracoNome);
+            }
+        } 
+      } else if (sorteio === 'Desafios') {
+        const desafios = opcoesSorteadas[sorteio];
+        for (const desafio of desafios) {
+            const desafioImagem = document.createElement('img');
+            desafioImagem.src = desafio.imagem;
+            desafioImagem.title = desafio.nome;
+            sorteioDiv.appendChild(desafioImagem);
+        }
+    } else {
+        resultado.textContent = opcoesSorteadas[sorteio];
+        sorteioDiv.appendChild(resultado);
+    }
+
+    animationDiv.appendChild(sorteioDiv);
   }
 }
   
