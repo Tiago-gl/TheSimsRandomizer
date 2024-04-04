@@ -13,28 +13,28 @@ function escolherAleatoriamente(opcoes) {
   }
 
   const mapas = {
-    WillowCreek: 'path/to/WillowCreek.png',
-    OasisSpring: 'path/to/OasisSpring.png',
-    Newcrest: 'path/to/Newcrest.png',
-    MagnoliaPromade: 'path/to/MagnoliaPromade.png',
-    Windmburg: 'path/to/Windmburg.png',
-    SanMyshuno: 'path/to/SanMyshuno.png',
-    ForgottenHollow: 'path/to/ForgottenHollow.png',
-    BridletonBay: 'path/to/BridletonBay.png',
-    DelSoyValley: 'path/to/DelSoyValley.png',
-    Strangerville: 'path/to/Strangerville.png',
-    Sulani: 'path/to/Sulani.png',
-    Glimmerbook: 'path/to/Glimmerbook.png',
-    Britechester: 'path/to/Britechester.png',
-    EvergreenHarbor: 'path/to/EvergreenHarbor.png',
-    MonteKomorebi: 'path/to/MonteKomorebi.png',
-    AvelandiaDoNorte: 'path/to/AvelandiaDoNorte.png',
-    Tartosa: 'path/to/Tartosa.png',
-    MoonwoodMill: 'path/to/MoonwoodMill.png',
-    Copperdale: 'path/to/Copperdale.png',
-    SanSequoia: 'path/to/SanSequoia.png',
-    SerraDasCastanheiras: 'path/to/SerraDasCastanheiras.png',
-    Tomarang: 'path/to/Tomarang.png',
+    WillowCreek: 'img/mapa/%3Fcone_Willow_Creek.webp',
+    OasisSpring: 'img/mapa/%3Fcone_Oasis_Springs.webp',
+    Newcrest: 'img/mapa/%3Fcone_Newcrest.webp',
+    MagnoliaPromade: 'img/mapa/%3Fcone_Magnolia_Promenade.webp',
+    Windmburg: 'img/mapa/%3Fcone_Windenburg.webp',
+    SanMyshuno: 'img/mapa/%3Fcone_San_Myshuno.webp',
+    ForgottenHollow: 'img/mapa/%3Fcone_Forgotten_Hollow.webp',
+    BridletonBay: 'img/mapa/%3Fcone_Brindleton_Bay.webp',
+    DelSoyValley: 'img/mapa/%3Fcone_Del_Sol_Valley.webp',
+    Strangerville: 'img/mapa/%3Fcone_StrangerVille.webp',
+    Sulani: 'img/mapa/%3Fcone_Sulani.webp',
+    Glimmerbook: 'img/mapa/%3Fcone_Glimmerbrook.webp',
+    Britechester: 'img/mapa/%3Fcone_Britechester.webp',
+    EvergreenHarbor: 'img/mapa/%3Fcone_Evergreen_Harbor.webp',
+    MonteKomorebi: 'img/mapa/%3Fcone_Monte_Komorebi.webp',
+    AvelandiaDoNorte: 'img/mapa/3Fndia_do_Norte.webp',
+    Tartosa: 'img/mapa/%3Fcone_Tartosa.webp',
+    MoonwoodMill: 'img/mapa/%3Fcone_Moonwood_Mill.webp',
+    Copperdale: 'img/mapa/%3Fcone_Copperdale.webp',
+    SanSequoia: 'img/mapa/%3Fcone_San_Sequoia.webp',
+    SerraDasCastanheiras: 'img/mapa/%3Fcone_Serra_das_Castanheiras.webp',
+    Tomarang: 'img/mapa/%3Fcone_Tomarang.webp',
   };
   const terreno = [
     'Pequeno',
@@ -88,40 +88,40 @@ function escolherAleatoriamente(opcoes) {
     Casual_nudety : 'img/traco_lote/Trait_TS4_Clothing_Optional.webp',
     Conexão_vampirica : 'img/traco_lote/Trait_TS4_Vampire_Nexus.webp',
     Covil_de_ciencia : 'img/traco_lote/Trait_TS4_Science_Lair.webp',
-    Covil_vampirico_registrado : '',
-    Caozinha_do_chef,
-    Domestico,
-    Linha ley,
-    Linha ley sombria,
-    Espiritos,
-    Estudio domestico,
-    Fada das moedas,
-    Frequente animal attacks,
-    Geotermico,
-    Gnomos,
-    Habitação particular,
-    Hypersexual,
-    Internet rapida,
-    Local de estudo,
-    Local de festas,
-    Local ecologico,
-    Luz natural,
-    Melhor ponto da ciidade,
-    Nudist hugout,
-    Paz e tranqui.,
-    Point dos universitarios,
-    Ponto movimentado,
-    Encontro cães,
-    Encontro gatos,
-    Poço natural,
-    Recebe cães,
-    Recebe gatos,
-    Roupas ocasionais,
-    Vibração maldosa,
-    Vizinhança adolecente,
-    Área de reprodução,
-    Área de treinamento,
-    Ótimo solo,
+    Covil_vampirico_registrado : 'img/traco_lote/Trait_TS4_Vampire_Lair.webp',
+    Caozinha_do_chef: 'img/traco_lote/Trait_TS4_Chef%27s_Kitchen.webp',
+    Domestico: 'img/traco_lote/Trait_TS4_Domestic.webp',
+    Linha_ley: 'img/traco_lote/Trait_TS4_On_Ley_Line.webp',
+    Linha_ley_sombria: 'img/traco_lote/TS4_Trait_On_A_Dark_Ley_Line.webp',
+    Espiritos: 'img/traco_lote/Trait_TS4_Island_Spirits.webp',
+    Estudio_domestico: 'img/traco_lote/Trait_TS4_Home_Studio.webp',
+    Fada_das_moedas: 'img/traco_lote/Trait_TS4_Penny_Pixies.webp',
+    Frequente_animal_attacks: '',
+    Geotermico: 'img/traco_lote/Trait_TS4_Geothermal.webp',
+    Gnomos: 'img/traco_lote/Trait_TS4_Gnomes.webp',
+    Habitação_particular: 'img/traco_lote/Trait_TS4_Private_Dwelling.webp',
+    Hypersexual: '',
+    Internet_rapida: 'img/traco_lote/Trait_TS4_Fast_Internet.webp',
+    Local_de_estudo: 'img/traco_lote/Trait_TS4_Study_Spot.webp',
+    Local_de_festas: 'img/traco_lote/Trait_TS4_Party_Place.webp',
+    Local_ecologico: 'img/traco_lote/Trait_TS4_Eco_Lot.webp',
+    Luz_natural: 'img/traco_lote/Trait_TS4_Natural_Light.webp',
+    Melhor_ponto_da_ciidade: 'img/traco_lote/Trait_TS4_Hottest_Spot_in_Town.webp',
+    Nudist_hugout: '',
+    Paz_e_tranquilidade: 'img/traco_lote/Trait_TS4_Peace_and_Quiet.webp',
+    Point_dos_universitarios: 'img/traco_lote/Trait_TS4_University_Student_Hang_Out.webp',
+    Ponto_movimentado: 'img/traco_lote/Trait_TS4_Up-and-Coming_Hotspot.webp',
+    Encontro_cães: 'img/traco_lote/Trait_TS4_Dog_Hangout.webp',
+    Encontro_gatos: 'img/traco_lote/Trait_TS4_Cat_Hangout.webp',
+    Poço_natural: 'img/traco_lote/Trait_TS4_Natural_Well.webp',
+    Recebe_cães: 'img/traco_lote/Trait_TS4_Dog_Friendly.webp',
+    Recebe_gatos: 'img/traco_lote/Trait_TS4_Cat_Friendly.webp',
+    Roupas_ocasionais: 'img/traco_lote/Trait_TS4_Clothing_Optional.webp',
+    Vibração_maldosa: 'img/traco_lote/Trait_TS4_Mean_Vibe.webp',
+    Vizinhança_adolecente: 'img/traco_lote/TeenHangout.webp',
+    Área_de_reprodução: 'img/traco_lote/Trait_TS4_Breeding_Grounds.webp',
+    Área_de_treinamento: 'img/traco_lote/The_Sims_4_Pet_Training_Icon.webp',
+    Ótimo_solo: 'img/traco_lote/Trait_TS4_Great_Soil.webp',
   };
 
   function selecionarTracoLote() {
@@ -129,12 +129,13 @@ function escolherAleatoriamente(opcoes) {
     const tracosSelecionados = [];
   
     for (let i = 0; i < quantidadeSelecionada; i++) {
-      const tracoAleatorio = escolherAleatoriamente(traco_lote);
+      const tracoAleatorio = escolherAleatoriamente(Object.keys(traco_lote));
       tracosSelecionados.push(tracoAleatorio);
     }
   
     return tracosSelecionados;
-  }
+}
+
 
   const orcamento = [
     '20 mil',
@@ -243,16 +244,16 @@ function escolherAleatoriamente(opcoes) {
   let sorteioIntervalPersonagem;
   
   function sortearOpcoes() {
-    const tempoSorteio = 3000; // 5 segundos de sorteio (5000 milissegundos)
+    const tempoSorteio = 3000; // 3 segundos de sorteio (3000 milissegundos)
     const tempoTotal = Date.now() + tempoSorteio;
   
     sorteioIntervalOpcoes = setInterval(function() {
       const opcoesSorteadas = {
-        mapa: escolherAleatoriamente(mapas),
-        terreno: escolherAleatoriamente(terreno),
-        tipo_lote: escolherAleatoriamente(tipo_lote),
-        traco_lote: escolherAleatoriamente(traco_lote),
-        desafio_lote: escolherAleatoriamente(desafios_lote)
+        Mapa: escolherAleatoriamente(Object.keys(mapas)), // Sorteie apenas o nome do mapa
+        Terreno: escolherAleatoriamente(terreno),
+        Tipo: escolherAleatoriamente(tipo_lote),
+        Traços: selecionarTracoLote(),
+        Desafios: escolherAleatoriamente(desafios_lote)
       };
   
       exibirAnimacaoPorSorteio(opcoesSorteadas);
@@ -262,28 +263,57 @@ function escolherAleatoriamente(opcoes) {
         clearInterval(sorteioIntervalOpcoes);
       }
     }, 100);
-  }
-  
-  function exibirAnimacaoPorSorteio(opcoesSorteadas) {
-    const animationDiv = document.getElementById('animation');
-    animationDiv.innerHTML = '';
-  
-    for (const sorteio in opcoesSorteadas) {
+}
+
+function exibirAnimacaoPorSorteio(opcoesSorteadas) {
+  const animationDiv = document.getElementById('animation');
+  animationDiv.innerHTML = '';
+
+  for (const sorteio in opcoesSorteadas) {
       const sorteioDiv = document.createElement('div');
       sorteioDiv.classList.add('sorteio');
-  
+
       const titulo = document.createElement('h3');
       titulo.textContent = sorteio + ':';
       sorteioDiv.appendChild(titulo);
-  
+
       const resultado = document.createElement('p');
-      resultado.textContent = opcoesSorteadas[sorteio];
-      sorteioDiv.appendChild(resultado);
-  
+
+      // Verificar se o sorteio é Mapa
+      if (sorteio === 'Mapa') {
+          const mapa = opcoesSorteadas[sorteio];
+          // Verificar se o mapa existe na lista de mapas
+          if (mapas.hasOwnProperty(mapa)) {
+              const mapaImagem = document.createElement('img');
+              mapaImagem.src = mapas[mapa];
+              sorteioDiv.appendChild(mapaImagem);
+
+              // const mapaNome = document.createElement('p');
+              // mapaNome.textContent = mapa;
+              // sorteioDiv.appendChild(mapaNome);
+          }
+      } else if (sorteio === 'Traços') {
+          const tracos = opcoesSorteadas[sorteio];
+          for (const traco of tracos) {
+              // Verificar se o traco existe na lista de traços e tem uma imagem associada
+              if (traco_lote.hasOwnProperty(traco)) {
+                  const tracoImagem = document.createElement('img');
+                  tracoImagem.src = traco_lote[traco];
+                  sorteioDiv.appendChild(tracoImagem);
+
+                  // const tracoNome = document.createElement('p');
+                  // tracoNome.textContent = traco;
+                  // sorteioDiv.appendChild(tracoNome);
+              }
+          }
+      } else {
+          resultado.textContent = opcoesSorteadas[sorteio];
+          sorteioDiv.appendChild(resultado);
+      }
+
       animationDiv.appendChild(sorteioDiv);
-    }
   }
-  
+}
   
   function sortearPersonagem() {
     const tempoSorteio = 5000; // 5 segundos de sorteio (5000 milissegundos)
