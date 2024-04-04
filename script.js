@@ -167,7 +167,7 @@ function escolherAleatoriamente(opcoes) {
   ];
 
   const desafios_lote = {
-    Amaldiçoado: 'path/to/Amaldiçoado.png',
+    Amaldiçoado: 'img/desafio_lote/Trait_TS4_Cursed.webp',
     Assombrado: 'path/to/Assombrado.png',
     'Atividade vulcanica': 'path/to/AtividadeVulcanica.png',
     'Capim das pradarias': 'path/to/CapimDasPradarias.png',
