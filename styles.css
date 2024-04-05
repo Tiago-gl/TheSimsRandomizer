@@ -146,6 +146,23 @@ button:hover {
     text-decoration: underline;
 }
 
+/* Confettis */
+
+.confetti {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: confetti-fall linear infinite;
+}
+
+@keyframes confetti-fall {
+    0% { transform: translateY(-100vh) rotate(0deg); }
+    100% { transform: translateY(100vh) rotate(360deg); }
+}
+
+
 /* Responsiveness for mobile devices */
 @media only screen and (max-width: 600px) {
     html{

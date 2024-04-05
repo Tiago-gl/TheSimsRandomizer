@@ -1,9 +1,57 @@
-// const botao = document.getElementById('show');
-// const minhaDiv = document.getElementById('conteiner');
 
-// botao.addEventListener('click', function() {
-//     minhaDiv.style.display = 'block';
-// });
+function adicionarConfetes() {
+  const container = document.getElementById('confetti-container');
+  const numConfetes = 200; // Número de confetes
+
+  for (let i = 0; i < numConfetes; i++) {
+      const confete = document.createElement('div');
+      confete.className = 'confetti';
+      container.appendChild(confete);
+
+      // Atribuir cores aleatórias aos confetes
+      confete.style.backgroundColor = getRandomColor();
+  }
+
+  const confetes = document.querySelectorAll('.confetti');
+  confetes.forEach(confete => {
+      const x = Math.random() * window.innerWidth;
+      const y = Math.random() * window.innerHeight;
+      const rotation = Math.random() * 360;
+      const delay = Math.random() * 1; // Delay aleatório para começar a animação
+      const duration = Math.random() * 5 + 5; // Duração aleatória da animação
+
+      confete.style.left = `${x}px`;
+      confete.style.top = `${y}px`;
+      confete.style.transform = `rotate(${rotation}deg)`;
+      confete.style.animationDelay = `${delay}s`;
+      confete.style.animationDuration = `${duration}s`;
+  });
+}
+
+// Função para gerar cores aleatórias
+function getRandomColor() {
+  const letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
+
+function removerConfetes() {
+  const container = document.getElementById('confetti-container');
+  container.innerHTML = ''; // Remove todos os confetes do contêiner
+}
+
+
+// Chamada da função quando o sorteio acabar
+function sorteioAcabou() {
+  adicionarConfetes(); // Chama a função para adicionar confetes quando o sorteio acaba
+  // Define um tempo limite para a exibição dos confetes (por exemplo, 5 segundos)
+  setTimeout(function() {
+      removerConfetes(); // Chama a função para remover os confetes após o tempo limite
+  }, 7000); // Tempo limite em milissegundos (5 segundos no exemplo)
+}
 
 function escolherAleatoriamente(opcoes) {
     // Gere um índice aleatório dentro do intervalo do tamanho da matriz
@@ -304,6 +352,7 @@ function criarPersonagens(quantidadeMoradores) {
       // Verificar se o tempo total já passou
       if (Date.now() > tempoTotal) {
         clearInterval(sorteioIntervalOpcoes);
+        sorteioAcabou();
       }
     }, 100);
 }
@@ -415,7 +464,8 @@ function sortearPersonagem() {
 
       // Verificar se o tempo total já passou
       if (Date.now() > tempoTotal) {
-          pararSorteio('personagem');
+        pararSorteio('personagem');
+        sorteioAcabou();
       }
   }, 100);
 }
