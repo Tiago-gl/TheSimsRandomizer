@@ -51,17 +51,17 @@ function escolherAleatoriamente(opcoes) {
     'Academia',
     'Aloj. de universidade',
     'Bar',
-    'Bar de karaoke',
+    'Bar de karaokê',
     'Biblioteca',
     'Boate',
-    'Brecho e loja de cha',
+    'Brechó e loja de chá',
     'Cafeteria',
     'Casa de banho',
     'Centro de artes',
-    'Centro de recrea.',
-    'Clinica vet.',
-    'Comercio',
-    'Espaço comuni.',
+    'Centro de recreativo',
+    'Clénica veterinária',
+    'Comércio',
+    'Espaço comunitarío',
     'Genérico',
     'Local de casamento',
     'Lote de aluguel para férias',
@@ -72,8 +72,8 @@ function escolherAleatoriamente(opcoes) {
     'Restaurante',
     'Salão',
     'Spa',
-    'Área de convivência ubrite',
-    'Área de convivência foxbury',
+    'Área de convivência UBrite',
+    'Área de convivência Foxbury',
   ];
 
   const traco_lote = {
@@ -125,16 +125,17 @@ function escolherAleatoriamente(opcoes) {
 
   function selecionarTracoLote() {
     const quantidadeSelecionada = 3;
-    const tracosSelecionados = [];
+    const tracosSelecionados = new Set(); // Usaremos um conjunto para garantir que não haja traços repetidos
   
-    for (let i = 0; i < quantidadeSelecionada; i++) {
-      const tracoAleatorio = escolherAleatoriamente(Object.keys(traco_lote));
-      tracosSelecionados.push(tracoAleatorio);
+    // Continuaremos selecionando traços até termos a quantidade desejada
+    while (tracosSelecionados.size < quantidadeSelecionada) {
+        const tracoAleatorio = escolherAleatoriamente(Object.keys(traco_lote));
+        tracosSelecionados.add(tracoAleatorio);
     }
   
-    return tracosSelecionados;
-}
-
+    // Convertemos o conjunto de volta para um array antes de retornar
+    return Array.from(tracosSelecionados);
+};
 
   const orcamento = [
     '20 mil',
@@ -250,27 +251,36 @@ function escolherOrientacao(idade) {
   }
 }
 
+function escolherAspiracao(idade) {
+  if (idade === 'Bebê' || idade === 'Bebê de colo'){
+    return '';
+  } else if (idade === 'Criança') {
+    return escolherAleatoriamente(aspiracaoChild);
+  } else {
+    return escolherAleatoriamente(aspiracao);
+  }
+}
+
 function criarPersonagens(quantidadeMoradores) {
   const personagens = [];
 
   for (let i = 0; i < quantidadeMoradores; i++) {
-    const idade = escolherAleatoriamente(idadeChar);
-    const orientacao = escolherOrientacao(idade);
+      const idade = escolherAleatoriamente(idadeChar);
+      const orientacao = escolherOrientacao(idade);
+      const aspiracao = escolherAspiracao(idade);
 
-    const personagem = {
-      sexo: escolherAleatoriamente(sexoChar),
-      orientacao: orientacao,
-      idade: idade,
-      tipo: escolherAleatoriamente(tipoSim),
-      aspiracao: escolherAleatoriamente(aspiracao),
-    };
-    personagens.push(personagem);
+      const personagem = {
+          sexo: escolherAleatoriamente(sexoChar),
+          orientacao: orientacao,
+          idade: idade,
+          tipo: escolherAleatoriamente(tipoSim),
+          aspiracao: aspiracao
+      };
+      personagens.push(personagem);
   }
 
   return personagens;
 }
-
-  
 
   let sorteioIntervalOpcoes;
   let sorteioIntervalPersonagem;
@@ -358,36 +368,57 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
   }
 }
   
-  function sortearPersonagem() {
-    const tempoSorteio = 3000; // 5 segundos de sorteio (5000 milissegundos)
-    const tempoTotal = Date.now() + tempoSorteio;
-  
-    sorteioIntervalPersonagem = setInterval(function() {
+function sortearPersonagem() {
+  const tempoSorteio = 3000; // 5 segundos de sorteio (5000 milissegundos)
+  const tempoTotal = Date.now() + tempoSorteio;
+
+  sorteioIntervalPersonagem = setInterval(function() {
       const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
-      const personagensSorteados = criarPersonagens(quantidadeMoradores);
-  
+      let personagensSorteados = criarPersonagens(quantidadeMoradores);
+
+      // Verificar se pelo menos um personagem tem uma idade de adolescente, jovem adulto ou idoso
+      const possuiGrupoEtarioNecessario = personagensSorteados.some(personagem => {
+          const idade = personagem.idade;
+          return idade === 'Adolescente' || idade === 'Jovem adulto' || idade === 'Idoso';
+      });
+
+      if (!possuiGrupoEtarioNecessario) {
+          // Escolher aleatoriamente um personagem e modificar sua idade para adolescente, jovem adulto ou idoso
+          const indexAleatorio = Math.floor(Math.random() * personagensSorteados.length);
+          const indexGrupoEtario = Math.floor(Math.random() * 3); // 0 para adolescente, 1 para jovem adulto, 2 para idoso
+          const grupoEtario = ['Adolescente', 'Jovem adulto', 'Idoso'][indexGrupoEtario];
+          personagensSorteados[indexAleatorio].idade = grupoEtario;
+      }
+
       const animationDiv = document.getElementById('animationPersonagem');
       animationDiv.innerHTML = '';
-  
+
       personagensSorteados.forEach(personagem => {
-        const personagemDiv = document.createElement('div');
-        personagemDiv.classList.add('personagem');
-  
-        for (const key in personagem) {
-          const p = document.createElement('p');
-          p.textContent = `${key}: ${personagem[key]}`;
-          personagemDiv.appendChild(p);
-        }
-  
-        animationDiv.appendChild(personagemDiv);
+          const personagemDiv = document.createElement('div');
+          personagemDiv.classList.add('personagem');
+
+          for (const key in personagem) {
+              if (key === 'orientacao' && personagem[key] === '') {
+                  continue; // Pular a criação do elemento se a orientação estiver vazia
+              }
+              if (key === 'aspiracao' && personagem[key] === '') {
+                  continue; // Pular a criação do elemento se a aspiração estiver vazia
+              }
+
+              const p = document.createElement('p');
+              p.textContent = `${key}: ${personagem[key]}`;
+              personagemDiv.appendChild(p);
+          }
+
+          animationDiv.appendChild(personagemDiv);
       });
-  
+
       // Verificar se o tempo total já passou
       if (Date.now() > tempoTotal) {
-        pararSorteio('personagem');
+          pararSorteio('personagem');
       }
-    }, 100);
-  }
+  }, 100);
+}
 
   
   function iniciarSorteio(tipo) {
