@@ -277,12 +277,19 @@ function escolherAleatoriamente(opcoes) {
   
   const idadeChar = ['Bebê de colo', 'Bebê', 'Criança', 'Adolescente', 'Jovem adulto', 'Adulto', 'Idoso'];
   
-  const tipoSim = ['Normal', 'Alienigena', 'Sereia', 'LobiSim', 'Vampiro', 'Feiticeiro'];
+  const tipoSim = {
+    Normal: 'img/tipo_sim/Clingy.webp',
+    Alienigena: 'img/tipo_sim/Alienigena.webp',
+    Sereia: 'img/tipo_sim/Sereia.webp',
+    LobiSim: 'img/tipo_sim/LobiSim.webp',
+    Vampiro: 'img/tipo_sim/Vampiro.webp',
+    Feiticeiro: 'img/tipo_sim/Feiticeiro.webp'
+  };
   
   const aspiracao = {
     'Romantica em serie': 'img/aspiracao/Romantica_em_serie.webp',
     'Alma gemêa': 'img/aspiracao/Alma_gemêa.webp',
-    'AmigO dos animais': 'img/aspiracao/AmigO_dos_animais.webp',
+    'Amigo dos animais': 'img/aspiracao/Aspira3Fo_Amiga_dos_Animais.webp',
     'Cavalgante': 'img/aspiracao/Cavalgante.webp',
     'Esportes radicais': 'img/aspiracao/Esportes_radicais.webp',
     'Fisiculturista': 'img/aspiracao/Fisiculturista.webp',
@@ -346,10 +353,16 @@ function escolherAleatoriamente(opcoes) {
     'corsaria galatica': 'img/aspiracao/corsaria_galatica.webp',
   };
 
-const aspiracaoChild = [
-  'Prodígio Artístico', 'Jovem Gênio', 'Capitão Brincadeira', 'Gênia Criativa', 'Estrela da Festa de pijama',
-  'Corpo e Mente', 'Pestinha Agitada', 'Borboleta Social',
-]
+const aspiracaoChild = {
+  'Prodígio Artístico': 'img/aspiracao/Prodígio_Artístico.webp',
+  'Jovem Gênio': 'img/aspiracao/Jovem_Gênio.webp',
+  'Capitão Brincadeira': 'img/aspiracao/Capitão_Brincadeira.webp',
+  'Gênia Criativa': 'img/aspiracao/Gênia_Criativa.webp',
+  'Estrela da Festa de pijama': 'img/aspiracao/Estrela_da_Festa_de_pijama.webp',
+  'Corpo e Mente': 'img/aspiracao/Corpo_e_Mente.webp',
+  'Pestinha Agitada': 'img/aspiracao/Pestinha_Agitada.webp',
+  'Borboleta Social': 'img/aspiracao/Borboleta_Social.webp',
+};
 
 function escolherOrientacao(idade) {
   // Se a idade for "Bebê", "Bebê de Colo" ou "Criança", retornar vazio
