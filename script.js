@@ -271,97 +271,101 @@ function escolherAleatoriamente(opcoes) {
     '8',
   ];
   
-  const sexoChar = ['Masculino', 'Feminino'];
+  const sexoChar = {
+    Masculino:'img/Male_35764.png',
+    Feminino: 'img/Female_35792.png'
+  };
   
-  const orientacao = ['Hetero', 'Homoafetivo', 'Pansexual', 'Assexual'];
+  const orientacao = ['Hetero', 'Homosexual', 'Pansexual', 'Assexual'];
   
   const idadeChar = ['Bebê de colo', 'Bebê', 'Criança', 'Adolescente', 'Jovem adulto', 'Adulto', 'Idoso'];
   
   const tipoSim = {
     Normal: 'img/tipo_sim/Clingy.webp',
-    Alienigena: 'img/tipo_sim/Alienigena.webp',
+    Alienigena: 'img/tipo_sim/Fgena_29.webp',
     Sereia: 'img/tipo_sim/Sereia.webp',
-    LobiSim: 'img/tipo_sim/LobiSim.webp',
+    LobiSim: 'img/tipo_sim/Lobisomem.webp',
     Vampiro: 'img/tipo_sim/Vampiro.webp',
-    Feiticeiro: 'img/tipo_sim/Feiticeiro.webp'
+    Feiticeiro: 'img/tipo_sim/Fcone4_Feiticeiro.webp'
   };
   
   const aspiracao = {
-    'Romantica em serie': 'img/aspiracao/Romantica_em_serie.webp',
-    'Alma gemêa': 'img/aspiracao/Alma_gemêa.webp',
+    'Romantica em serie': 'img/aspiracao/Aspira3Fo_Rom3Frie.webp',
+    'Alma gemêa': 'img/aspiracao/Aspira3Fo_Alma_G3Fmea.webp',
     'Amigo dos animais': 'img/aspiracao/Aspira3Fo_Amiga_dos_Animais.webp',
-    'Cavalgante': 'img/aspiracao/Cavalgante.webp',
-    'Esportes radicais': 'img/aspiracao/Esportes_radicais.webp',
-    'Fisiculturista': 'img/aspiracao/Fisiculturista.webp',
-    'Cuidados pessoais': 'img/aspiracao/Cuidados_pessoais.webp',
-    'Paz interior': 'img/aspiracao/Paz_interior.webp',
-    'Guru zen': 'img/aspiracao/Guru_zen.webp',
-    'Mixologo': 'img/aspiracao/Mixologo.webp',
-    'Produzir nectar': 'img/aspiracao/Produzir_nectar.webp',
-    'Ás dos eletrodomesticos': 'img/aspiracao/Ás_dos_eletrodomesticos.webp',
-    'Chef mestre': 'img/aspiracao/Chef_mestre.webp',
-    'Academica': 'img/aspiracao/Academica.webp',
-    'Gênio da informatiica': 'img/aspiracao/Gênio_da_informatiica.webp',
-    'Cerebro nerd': 'img/aspiracao/Cerebro_nerd.webp',
-    'Feitiçaria magica': 'img/aspiracao/Feitiçaria_magica.webp',
-    'Mestre vampiro': 'img/aspiracao/Mestre_vampiro.webp',
-    'Sim da renacença': 'img/aspiracao/Sim_da_renacença.webp',
-    'Arqueologia': 'img/aspiracao/Arqueologia.webp',
-    'Gênio musical': 'img/aspiracao/Gênio_musical.webp',
-    'Senhora do trico': 'img/aspiracao/Senhora_do_trico.webp',
-    'Mestre da criação': 'img/aspiracao/Mestre_da_criação.webp',
-    'Atriz magistral': 'img/aspiracao/Atriz_magistral.webp',
-    'Pintor': 'img/aspiracao/Pintor.webp',
-    'Best-seller': 'img/aspiracao/Best-seller.webp',
-    'Caçadora de segredos': 'img/aspiracao/Caçadora_de_segredos.webp',
-    'Amor do mal': 'img/aspiracao/Amor_do_mal.webp',
-    'inimigo publico': 'img/aspiracao/inimigo_publico.webp',
-    'travessura': 'img/aspiracao/travessura.webp',
-    'familia grande e feliz': 'img/aspiracao/familia_grande_e_feliz.webp',
-    'familia vampiro': 'img/aspiracao/familia_vampiro.webp',
-    'supermãe/pai': 'img/aspiracao/supermãe_pai.webp',
-    'linhagem de sucesso': 'img/aspiracao/linhagem_de_sucesso.webp',
-    'propietaria 5 estrelas': 'img/aspiracao/propietaria_5_estrelas.webp',
-    'magnata do mercado': 'img/aspiracao/magnata_do_mercado.webp',
-    'rico': 'img/aspiracao/rico.webp',
-    'barão das mansões': 'img/aspiracao/barão_das_mansões.webp',
-    'lobisim iniciante': 'img/aspiracao/lobisim_iniciante.webp',
-    'conhecimento tomarang': 'img/aspiracao/conhecimento_tomarang.webp',
-    'impecavel': 'img/aspiracao/impecavel.webp',
-    'nativa da cidade': 'img/aspiracao/nativa_da_cidade.webp',
-    'vida de praia': 'img/aspiracao/vida_de_praia.webp',
-    'misterio em strangerville': 'img/aspiracao/misterio_em_strangerville.webp',
-    'turista em monte komorebi': 'img/aspiracao/turista_em_monte_komorebi.webp',
-    'incrivelmente imundo': 'img/aspiracao/incrivelmente_imundo.webp',
-    'exploradora da selva': 'img/aspiracao/exploradora_da_selva.webp',
-    'inovadora ecologica': 'img/aspiracao/inovadora_ecologica.webp',
-    'botanica autonoma': 'img/aspiracao/botanica_autonoma.webp',
-    'as da pesca': 'img/aspiracao/as_da_pesca.webp',
-    'curadora': 'img/aspiracao/curadora.webp',
-    'cuidadora do campo': 'img/aspiracao/cuidadora_do_campo.webp',
-    'ar livre': 'img/aspiracao/ar_livre.webp',
-    'produtor de poçoes': 'img/aspiracao/produtor_de_poçoes.webp',
-    'grande festeira': 'img/aspiracao/grande_festeira.webp',
-    'vampiro do bem': 'img/aspiracao/vampiro_do_bem.webp',
-    'lider do bando': 'img/aspiracao/lider_do_bando.webp',
-    'estrela da comedia': 'img/aspiracao/estrela_da_comedia.webp',
-    'amiga do mundo': 'img/aspiracao/amiga_do_mundo.webp',
-    'habitante perspicaz': 'img/aspiracao/habitante_perspicaz.webp',
-    'confidente vizinho': 'img/aspiracao/confidente_vizinho.webp',
-    'celebridade famosa': 'img/aspiracao/celebridade_famosa.webp',
-    'esperança ou ordem': 'img/aspiracao/esperança_ou_ordem.webp',
-    'corsaria galatica': 'img/aspiracao/corsaria_galatica.webp',
+    'Cavalgante': 'img/aspiracao/Aspira3Fo_Cavalgante_de_Campeonato.webp',
+    'Esportes radicais': 'img/aspiracao/Aspira3Fo_Entusiasta_de_Esportes_Radicais.webp',
+    'Fisiculturista': 'img/aspiracao/Aspira3Fo_Fisiculturista.webp',
+    'Cuidados pessoais': 'img/aspiracao/Aspira3Fo_Especialista_em_Cuidados_Pessoais.webp',
+    'Paz interior': 'img/aspiracao/Aspira3Fo_Paz_Interior.webp',
+    'Guru zen': 'img/aspiracao/Aspira3Fo_Guru_Zen.webp',
+    'Mixologo': 'img/aspiracao/Aspiração_Mestre_da_Mixologia.webp',
+    'Produzir nectar': 'img/aspiracao/Aspira3Fo_Especialista_na_Produ3Fo_de_N%3Fctar.webp',
+    'Ás dos eletrodomesticos': 'Ás dos eletrodomesticos',
+    'Chef mestre': 'img/aspiracao/Aspira3Fo_Chef_Mestre.webp',
+    'Academico': 'img/aspiracao/Aspira3Fo_Acad3Fmico.webp',
+    'Gênio da informatiica': 'img/aspiracao/Aspira3Fo_G3Ftica.webp',
+    'Cerebro nerd': 'img/aspiracao/Aspira3Fo_C3Frebro_Nerd.webp',
+    'Feitiçaria magica': 'img/aspiracao/Aspira3Fo_Feiti3Faria_e_Magia.webp',
+    'Mestre vampiro': 'img/aspiracao/Aspira3Fo_Mestre_Vampiro.webp',
+    'Sim da renacença': 'img/aspiracao/Aspira3Fo_Sim_da_Renascen3Fa.webp',
+    'Arqueologia': 'img/aspiracao/Aspira3Fo_Estudioso_de_Arqueologia.webp',
+    'Gênio musical': 'img/aspiracao/Aspira3Fo_G3Fnio_Musical.webp',
+    'Senhor do trico': 'img/aspiracao/Aspira3Fo_Senhor_do_Tric3F.webp',
+    'Mestre da criação': 'img/aspiracao/Aspira3Fo_Mestre_da_Cria3Fo.webp',
+    'Atriz magistral': 'img/aspiracao/Aspira3Fo_Ator_Magistral.webp',
+    'Pintor': 'img/aspiracao/Aspira3Fo_Pintor_Extraordin3Frio.webp',
+    'Best-seller': 'img/aspiracao/Aspira3Fo_Autor_Best-seller.webp',
+    'Caçadora de segredos': 'img/aspiracao/Aspira3Fo_Ca3Fador_de_Segredos.webp',
+    'Amor do mal': 'img/aspiracao/Aspira3Fo_Amor_do_Mal.webp',
+    'inimigo publico': 'img/aspiracao/Aspira3Fo_Inimigo_P3Fblico.webp',
+    'travessura': 'img/aspiracao/Aspira3Fo_Rei_das_Travessuras.webp',
+    'familia grande e feliz': 'img/aspiracao/Aspira3Fo_Fam3Flia_Grande_e_Feliz.webp',
+    'familia vampiro': 'img/aspiracao/Aspira3Fo_Fam3Flia_de_Vampiros.webp',
+    'supermãe/pai': 'img/aspiracao/Aspira3Fo_Superpai.webp',
+    'linhagem de sucesso': 'img/aspiracao/Aspira3Fo_Linhagem_de_Sucesso.webp',
+    'propietaria 5 estrelas': 'img/aspiracao/Aspira3Fo_Propriet3Frio_Cinco_Estrelas.webp',
+    'magnata do mercado': 'magnata do mercado',
+    'rico': 'img/aspiracao/Aspira3Fo_Fabulosamente_Rico.webp',
+    'barão das mansões': 'img/aspiracao/Aspira3Fo_Bar3Fes.webp',
+    'lobisim iniciante': 'img/aspiracao/Categoria_LobiSim.webp',
+    'conhecimento tomarang': 'img/aspiracao/Aspira3Fo_Fonte_do_Conhecimento_de_Tomarang.webp',
+    'impecavel': 'img/aspiracao/Aspira3Fo_Perfeitamente_Impe3Fvel.webp',
+    'nativa da cidade': 'img/aspiracao/Aspira3Fo_Nativo_da_Cidade.webp',
+    'vida de praia': 'img/aspiracao/Aspira3Fo_Vida_na_Praia.webp',
+    'misterio em strangerville': 'img/aspiracao/Aspira3Fo_Mist3Frio_em_StrangerVille.webp',
+    'turista em monte komorebi': 'img/aspiracao/Aspira3Fo_Turista_do_Monte_Komorebi.webp',
+    'incrivelmente imundo': 'img/aspiracao/Aspira3Fo_Incrivelmente_Imundo.webp',
+    'exploradora da selva': 'img/aspiracao/Aspira3Fo_Explorador_da_Selva.webp',
+    'inovadora ecologica': 'img/aspiracao/Aspira3Fo_Inovador_EcolFgico.webp',
+    'botanica autonoma': 'img/aspiracao/Aspira3Fo_Bot3Fnomo.webp',
+    'as da pesca': 'img/aspiracao/Aspira3Fo_3Fs_da_Pesca.webp',
+    'curador': 'img/aspiracao/Aspira3Fo_Curador.webp',
+    'cuidador do campo': 'img/aspiracao/Aspira3Fo_Cuidador_do_Campo.webp',
+    'ar livre': 'img/aspiracao/Aspira3Fo_Entusiasta_Do_Ar_Livre.webp',
+    'Artista dos Cristais': 'img/aspiracao/Aspiração_Artista_dos_Cristais.webp',
+    'produtor de poçoes': 'img/aspiracao/Aspira3Fo_Produtor_de_Po3Fes.webp',
+    'grande festeira': 'img/aspiracao/Aspira3Fo_Grande_Festeiro.webp',
+    'vampiro do bem': 'img/aspiracao/Aspira3Fo_Vampiro_do_Bem.webp',
+    'lider do bando': 'img/aspiracao/Aspira3Fo_L3Fder_do_Bando.webp',
+    'estrela da comedia': 'img/aspiracao/Aspira3Fo_Astro_da_Com3Fdia.webp',
+    'amigo do mundo': 'img/aspiracao/Aspira3Fo_Amigo_do_Mundo.webp',
+    'habitante perspicaz': 'img/aspiracao/Aspira3Fo_Habitante_Perspicaz.webp',
+    'confidente vizinho': 'img/aspiracao/Aspira3Fo_Confidente_da_Vizinhan%3Fa.webp',
+    'celebridade famosa': 'img/aspiracao/Aspira3Fo_Celebridade_Mundialmente_Famosa.webp',
+    'esperança ou ordem': 'img/aspiracao/Aspira3Fo_Esperan3Fa_ou_Ordem.webp',
+    'corsaria galatica': 'img/aspiracao/Aspira3Fo_Cors3Fctico.webp',
   };
 
 const aspiracaoChild = {
-  'Prodígio Artístico': 'img/aspiracao/Prodígio_Artístico.webp',
-  'Jovem Gênio': 'img/aspiracao/Jovem_Gênio.webp',
-  'Capitão Brincadeira': 'img/aspiracao/Capitão_Brincadeira.webp',
-  'Gênia Criativa': 'img/aspiracao/Gênia_Criativa.webp',
-  'Estrela da Festa de pijama': 'img/aspiracao/Estrela_da_Festa_de_pijama.webp',
-  'Corpo e Mente': 'img/aspiracao/Corpo_e_Mente.webp',
-  'Pestinha Agitada': 'img/aspiracao/Pestinha_Agitada.webp',
-  'Borboleta Social': 'img/aspiracao/Borboleta_Social.webp',
+  Prodígio_Artístico: 'img/aspiracao/Aspira3Fo_Prodigio_Art3Fstico.webp',
+  Jovem_Gênio: 'img/aspiracao/Aspira3Fo_Jovem_G3Fnio.webp',
+  Capitão_Brincadeira: 'img/aspiracao/Aspira3Fo_Capit3Fo_da_Brincadeira.webp',
+  Gênia_Criativo: 'img/aspiracao/Aspira3Fo_G3Fnio_Criativo.webp',
+  Estrela_da_Festa_de_pijama: 'img/aspiracao/Aspira3Fo_Estrela_da_Festa_do_Pijama.webp',
+  Corpo_e_Mente: 'img/aspiracao/Aspira3Fo_Corpo_e_Mente.webp',
+  Pestinha_Agitada: 'img/aspiracao/Aspira3Fo_Pestinha_Agitado.webp',
+  Borboleta_Social: 'img/aspiracao/Aspira3Fo_Borboletinha_Social.webp',
 };
 
 function escolherOrientacao(idade) {
@@ -390,12 +394,13 @@ function criarPersonagens(quantidadeMoradores) {
       const idade = escolherAleatoriamente(idadeChar);
       const orientacao = escolherOrientacao(idade);
       const aspiracao = escolherAspiracao(idade);
+      const tipo = escolherAleatoriamente(Object.keys(tipoSim)); // Selecionar aleatoriamente um tipo presente em tipoSim
 
       const personagem = {
           sexo: escolherAleatoriamente(sexoChar),
           orientacao: orientacao,
           idade: idade,
-          tipo: escolherAleatoriamente(tipoSim),
+          tipo: tipo,
           aspiracao: aspiracao
       };
       personagens.push(personagem);
@@ -403,6 +408,19 @@ function criarPersonagens(quantidadeMoradores) {
 
   return personagens;
 }
+
+function exibirImagemSexo(sexo) {
+  const img = document.createElement('img');
+  img.src = sexoChar[sexo];
+  return img;
+}
+
+function exibirImagemTipoSim(tipo) {
+  const img = document.createElement('img');
+  img.src = tipoSim[tipo];
+  return img;
+}
+
 
   let sorteioIntervalOpcoes;
   let sorteioIntervalPersonagem;
@@ -454,11 +472,7 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
         mapaImagem.src = mapas[mapa];
         mapaImagem.title = mapa;
         sorteioDiv.appendChild(mapaImagem);
-
-        // const mapaNome = document.createElement('p');
-        // mapaNome.textContent = mapa;
-        // sorteioDiv.appendChild(mapaNome);
-      }
+        }
     } else if (sorteio === 'Traços') {
         const tracos = opcoesSorteadas[sorteio];
         for (const traco of tracos) {
@@ -468,10 +482,6 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
                 tracoImagem.src = traco_lote[traco];
                 tracoImagem.title = traco;
                 sorteioDiv.appendChild(tracoImagem);
-
-                // const tracoNome = document.createElement('p');
-                // tracoNome.textContent = traco;
-                // sorteioDiv.appendChild(tracoNome);
             }
         } 
       } else if (sorteio === 'Desafios') {
@@ -496,51 +506,61 @@ function sortearPersonagem() {
   const tempoTotal = Date.now() + tempoSorteio;
 
   sorteioIntervalPersonagem = setInterval(function() {
-      const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
-      let personagensSorteados = criarPersonagens(quantidadeMoradores);
+    const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
+    let personagensSorteados = criarPersonagens(quantidadeMoradores);
 
-      // Verificar se pelo menos um personagem tem uma idade de adolescente, jovem adulto ou idoso
-      const possuiGrupoEtarioNecessario = personagensSorteados.some(personagem => {
-          const idade = personagem.idade;
-          return idade === 'Adolescente' || idade === 'Jovem adulto' || idade === 'Idoso';
-      });
+    // Verificar se pelo menos um personagem tem uma idade de adolescente, jovem adulto ou idoso
+    const possuiGrupoEtarioNecessario = personagensSorteados.some(personagem => {
+      const idade = personagem.idade;
+      return idade === 'Adolescente' || idade === 'Jovem adulto' || idade === 'Idoso';
+    });
 
-      if (!possuiGrupoEtarioNecessario) {
-          // Escolher aleatoriamente um personagem e modificar sua idade para adolescente, jovem adulto ou idoso
-          const indexAleatorio = Math.floor(Math.random() * personagensSorteados.length);
-          const indexGrupoEtario = Math.floor(Math.random() * 3); // 0 para adolescente, 1 para jovem adulto, 2 para idoso
-          const grupoEtario = ['Adolescente', 'Jovem adulto', 'Idoso'][indexGrupoEtario];
-          personagensSorteados[indexAleatorio].idade = grupoEtario;
+    if (!possuiGrupoEtarioNecessario) {
+      // Escolher aleatoriamente um personagem e modificar sua idade para adolescente, jovem adulto ou idoso
+      const indexAleatorio = Math.floor(Math.random() * personagensSorteados.length);
+      const indexGrupoEtario = Math.floor(Math.random() * 3); // 0 para adolescente, 1 para jovem adulto, 2 para idoso
+      const grupoEtario = ['Adolescente', 'Jovem adulto', 'Idoso'][indexGrupoEtario];
+      personagensSorteados[indexAleatorio].idade = grupoEtario;
+    }
+
+    const animationDiv = document.getElementById('animationPersonagem');
+    animationDiv.innerHTML = '';
+
+    personagensSorteados.forEach(personagem => {
+      const personagemDiv = document.createElement('div');
+      personagemDiv.classList.add('personagem');
+
+      for (const key in personagem) {
+        if (key === 'sexo') {
+          const sexoImg = exibirImagemSexo(personagem[key]);
+          personagemDiv.appendChild(sexoImg);
+          continue;
+        }
+        if (key === 'orientacao' && personagem[key] === '') {
+          continue; // Pular a criação do elemento se a orientação estiver vazia
+        }
+        if (key === 'aspiracao' && personagem[key] === '') {
+          continue; // Pular a criação do elemento se a aspiração estiver vazia
+        }
+        if (key === 'tipo') {
+          const tipoImg = exibirImagemTipoSim(personagem[key]);
+          personagemDiv.appendChild(tipoImg);
+          continue;
+        }
+
+        const p = document.createElement('p');
+        p.textContent = `${key}: ${personagem[key]}`;
+        personagemDiv.appendChild(p);
       }
 
-      const animationDiv = document.getElementById('animationPersonagem');
-      animationDiv.innerHTML = '';
+      animationDiv.appendChild(personagemDiv);
+    });
 
-      personagensSorteados.forEach(personagem => {
-          const personagemDiv = document.createElement('div');
-          personagemDiv.classList.add('personagem');
-
-          for (const key in personagem) {
-              if (key === 'orientacao' && personagem[key] === '') {
-                  continue; // Pular a criação do elemento se a orientação estiver vazia
-              }
-              if (key === 'aspiracao' && personagem[key] === '') {
-                  continue; // Pular a criação do elemento se a aspiração estiver vazia
-              }
-
-              const p = document.createElement('p');
-              p.textContent = `${key}: ${personagem[key]}`;
-              personagemDiv.appendChild(p);
-          }
-
-          animationDiv.appendChild(personagemDiv);
-      });
-
-      // Verificar se o tempo total já passou
-      if (Date.now() > tempoTotal) {
-        pararSorteio('personagem');
-        sorteioAcabou();
-      }
+    // Verificar se o tempo total já passou
+    if (Date.now() > tempoTotal) {
+      pararSorteio('personagem');
+      sorteioAcabou();
+    }
   }, 100);
 }
 
