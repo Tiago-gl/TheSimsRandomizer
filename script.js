@@ -391,19 +391,20 @@ function criarPersonagens(quantidadeMoradores) {
   const personagens = [];
 
   for (let i = 0; i < quantidadeMoradores; i++) {
-      const idade = escolherAleatoriamente(idadeChar);
-      const orientacao = escolherOrientacao(idade);
-      const aspiracao = escolherAspiracao(idade);
-      const tipo = escolherAleatoriamente(Object.keys(tipoSim)); // Selecionar aleatoriamente um tipo presente em tipoSim
+    const sexo = escolherAleatoriamente(Object.keys(sexoChar)); // Escolher aleatoriamente entre Masculino e Feminino
+    const idade = escolherAleatoriamente(idadeChar);
+    const orientacao = escolherOrientacao(idade);
+    const aspiracao = escolherAspiracao(idade);
+    const tipo = escolherAleatoriamente(Object.keys(tipoSim)); // Selecionar aleatoriamente um tipo presente em tipoSim
 
-      const personagem = {
-          sexo: escolherAleatoriamente(sexoChar),
-          orientacao: orientacao,
-          idade: idade,
-          tipo: tipo,
-          aspiracao: aspiracao
-      };
-      personagens.push(personagem);
+    const personagem = {
+      sexo: sexo,
+      orientacao: orientacao,
+      idade: idade,
+      tipo: tipo,
+      aspiracao: aspiracao
+    };
+    personagens.push(personagem);
   }
 
   return personagens;
@@ -530,11 +531,13 @@ function sortearPersonagem() {
       const personagemDiv = document.createElement('div');
       personagemDiv.classList.add('personagem');
 
+      // Exibir a imagem do sexo
+      const sexoImg = exibirImagemSexo(personagem.sexo);
+      personagemDiv.appendChild(sexoImg);
+
       for (const key in personagem) {
         if (key === 'sexo') {
-          const sexoImg = exibirImagemSexo(personagem[key]);
-          personagemDiv.appendChild(sexoImg);
-          continue;
+          continue; // Já exibimos a imagem do sexo, então passamos para a próxima propriedade
         }
         if (key === 'orientacao' && personagem[key] === '') {
           continue; // Pular a criação do elemento se a orientação estiver vazia
@@ -563,7 +566,6 @@ function sortearPersonagem() {
     }
   }, 100);
 }
-
   
   function iniciarSorteio(tipo) {
     if (tipo === 'mapa') {
