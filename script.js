@@ -154,7 +154,7 @@ function escolherAleatoriamente(opcoes) {
     Local_ecologico: 'img/traco_lote/Trait_TS4_Eco_Lot.webp',
     Luz_natural: 'img/traco_lote/Trait_TS4_Natural_Light.webp',
     Melhor_ponto_da_ciidade: 'img/traco_lote/Trait_TS4_Hottest_Spot_in_Town.webp',
-    Nudist_hugout: '',
+    Nudist_hugout: 'img/traco_lote/Z_ljg3-Photoroom.webp',
     Paz_e_tranquilidade: 'img/traco_lote/Trait_TS4_Peace_and_Quiet.webp',
     Point_dos_universitarios: 'img/traco_lote/Trait_TS4_University_Student_Hang_Out.webp',
     Ponto_movimentado: 'img/traco_lote/Trait_TS4_Up-and-Coming_Hotspot.webp',
@@ -300,8 +300,8 @@ function escolherAleatoriamente(opcoes) {
     Paz_interior: 'img/aspiracao/Aspira3Fo_Paz_Interior.webp',
     Guru_zen: 'img/aspiracao/Aspira3Fo_Guru_Zen.webp',
     Mixologo: 'img/aspiracao/Aspiração_Mestre_da_Mixologia.webp',
-    Produzir_nectar: 'img/aspiracao/Aspira3Fo_Especialista_na_Produ3Fo_de_N%3Fctar.webp',
-    Ás_dos_eletrodomesticos: 'Ás dos eletrodomesticos',
+    Produzir_nectar: 'img/aspiracao/Aspira3Fo_Especialista_na_Produ3Fo_de_N3Fctar.webp',
+    Ás_dos_eletrodomesticos: 'img/aspiracao/Aspiration_TS4_Eletrodomesticos.webp',
     Chef_mestre: 'img/aspiracao/Aspira3Fo_Chef_Mestre.webp',
     Academico: 'img/aspiracao/Aspira3Fo_Acad3Fmico.webp',
     Gênio_da_informatiica: 'img/aspiracao/Aspira3Fo_G3Ftica.webp',
@@ -325,7 +325,7 @@ function escolherAleatoriamente(opcoes) {
     superpai: 'img/aspiracao/Aspira3Fo_Superpai.webp',
     linhagem_de_sucesso: 'img/aspiracao/Aspira3Fo_Linhagem_de_Sucesso.webp',
     propietaria_5_estrelas: 'img/aspiracao/Aspira3Fo_Propriet3Frio_Cinco_Estrelas.webp',
-    magnata_do_mercado: 'magnata do mercado',
+    magnata_do_mercado: 'img/aspiracao/Aspiration_TS4_Magnata_mercado.webp',
     rico: 'img/aspiracao/Aspira3Fo_Fabulosamente_Rico.webp',
     barão_das_mansões: 'img/aspiracao/Aspira3Fo_Bar3Fes.webp',
     lobisim_iniciante: 'img/aspiracao/Categoria_LobiSim.webp',
@@ -351,7 +351,7 @@ function escolherAleatoriamente(opcoes) {
     estrela_da_comedia: 'img/aspiracao/Aspira3Fo_Astro_da_Com3Fdia.webp',
     amigo_do_mundo: 'img/aspiracao/Aspira3Fo_Amigo_do_Mundo.webp',
     habitante_perspicaz: 'img/aspiracao/Aspira3Fo_Habitante_Perspicaz.webp',
-    confidente_vizinho: 'img/aspiracao/Aspira3Fo_Confidente_da_Vizinhan%3Fa.webp',
+    confidente_vizinho: 'img/aspiracao/Aspira3Fo_Confidente_da_Vizinhan3Fa.webp',
     celebridade_famosa: 'img/aspiracao/Aspira3Fo_Celebridade_Mundialmente_Famosa.webp',
     esperança_ou_ordem: 'img/aspiracao/Aspira3Fo_Esperan3Fa_ou_Ordem.webp',
     corsaria_galatica: 'img/aspiracao/Aspira3Fo_Cors3Fctico.webp',
@@ -378,12 +378,16 @@ function escolherOrientacao(idade) {
 }
 
 function escolherAspiracao(idade) {
-  if (idade === 'Bebê' || idade === 'Bebê de colo'){
+  if (idade === 'Bebê' || idade === 'Bebê de colo') {
     return '';
   } else if (idade === 'Criança') {
-    return escolherAleatoriamente(Object.keys(aspiracaoChild));
+    const aspiracaoCrianca = escolherAleatoriamente(Object.keys(aspiracaoChild));
+    console.log('Aspiração para criança:', aspiracaoCrianca); // Adicionando um log para depuração
+    return aspiracaoCrianca;
   } else {
-    return escolherAleatoriamente(Object.keys(aspiracao));
+    const aspiracaoOutraIdade = escolherAleatoriamente(Object.keys(aspiracao));
+    console.log('Aspiração para outra idade:', aspiracaoOutraIdade); // Adicionando um log para depuração
+    return aspiracaoOutraIdade;
   }
 }
 
@@ -391,16 +395,16 @@ function criarPersonagens(quantidadeMoradores) {
   const personagens = [];
 
   for (let i = 0; i < quantidadeMoradores; i++) {
-    const sexo = escolherAleatoriamente(Object.keys(sexoChar)); // Escolher aleatoriamente entre Masculino e Feminino
+    const sexo = escolherAleatoriamente(Object.keys(sexoChar));
     const idade = escolherAleatoriamente(idadeChar);
     const orientacao = escolherOrientacao(idade);
     let aspiracao;
     if (idade === 'Criança') {
-      aspiracao = escolherAspiracao('Criança');
+      aspiracao = escolherAspiracao(idade); // Aqui estamos chamando escolherAspiracao com a string 'Criança'
     } else {
       aspiracao = escolherAspiracao(idade);
     }
-    const tipo = escolherAleatoriamente(Object.keys(tipoSim)); // Selecionar aleatoriamente um tipo presente em tipoSim
+    const tipo = escolherAleatoriamente(Object.keys(tipoSim));
 
     const personagem = {
       sexo: sexo,
@@ -414,7 +418,6 @@ function criarPersonagens(quantidadeMoradores) {
   console.log(aspiracao)
   return personagens;
 }
-
 
 function exibirImagemSexo(sexo) {
   const img = document.createElement('img');
@@ -431,9 +434,18 @@ function exibirImagemTipoSim(tipo) {
 
 function exibirImagemAspiracao(aspiracaoKey) {
   const img = document.createElement('img');
-  img.src = aspiracao[aspiracaoKey]; // Usamos aspiracaoKey como a chave para acessar a imagem
+  img.src = aspiracao[aspiracaoKey];
+  img.title = aspiracaoKey; // Usaremos a chave como título
   return img;
 }
+
+function exibirImagemAspiracaoChild(aspiracaoKey) {
+  const img = document.createElement('img');
+  img.src = aspiracaoChild[aspiracaoKey];
+  img.title = aspiracaoKey;
+  return img;
+}
+
 
   let sorteioIntervalOpcoes;
   let sorteioIntervalPersonagem;
@@ -563,10 +575,13 @@ function sortearPersonagem() {
           continue;
         }
         if (key === 'aspiracao') {
-          const aspiracaoImg = exibirImagemAspiracao(personagem[key]); // Passamos o valor da aspiração como argumento
+          const aspiracaoImg = personagem.idade === 'Criança' ? exibirImagemAspiracaoChild(personagem[key]) : exibirImagemAspiracao(personagem[key]);
+          aspiracaoImg.style.display = 'block'; // Adicionar estilo para exibir a imagem em uma nova linha
+          aspiracaoImg.style.marginLeft = 'auto'; // Centralizar a imagem
+          aspiracaoImg.style.marginRight = 'auto'; // Centralizar a imagem
           personagemDiv.appendChild(aspiracaoImg);
           continue;
-        }
+      }
         
         const p = document.createElement('p');
         p.textContent = `${key}: ${personagem[key]}`;
@@ -583,7 +598,6 @@ function sortearPersonagem() {
     }
   }, 100);
 }
-
   
   function iniciarSorteio(tipo) {
     if (tipo === 'mapa') {
