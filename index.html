@@ -15,12 +15,12 @@
         </div>
         <h3 class="warning">Aviso, este programa leva em consideração todas as expansões do jogo! (incluindo o WW)</h1>
         <div class="checkboxes">
-            <input type="checkbox" id="btn-menu" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu')">
+            <input type="checkbox" id="btn-menu" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu'); toggleDicaVisibility()">
             <label for="btn-menu">Usar somente lotes residenciais</label>
-            <input type="checkbox" id="btn-menu2" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu2')">
+            <input type="checkbox" id="btn-menu2" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu2'); toggleDicaVisibility()">
             <label for="btn-menu2">Usar todos os tipos de lotes</label>
-            <h4 class="dica">Dica de jogo: Caso o lote sorteado não seja residencial, fica mais divertido e desafiador morar "clandestinamente" no lote sorteado, basta somente comprar um terreno vazio como residencial mas usar o terreno principal como casa mesmo</h4>
         </div>
+        <h4 style="display: none;" id="dica" class="dica">Dica de jogo: Caso o lote sorteado não seja residencial, fica mais divertido e desafiador morar "clandestinamente" no lote sorteado, basta somente comprar um terreno vazio como residencial mas usar o terreno principal como casa mesmo</h4>
         <div class="columns">
             <div id="conteiner" class="container1">
                 <h2>Mapa Aleatório</h2>

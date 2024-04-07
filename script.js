@@ -8,6 +8,16 @@ function uncheckOtherCheckbox(checkboxId) {
   });
 }
 
+function toggleDicaVisibility() {
+  const btnMenu2 = document.getElementById('btn-menu2');
+  const dica = document.getElementById('dica');
+  if (btnMenu2.checked) {
+    dica.style.display = 'block';
+  } else {
+    dica.style.display = 'none';
+  }
+}
+
 function adicionarConfetes() {
   const container = document.getElementById('confetti-container');
   const numConfetes = 200; // Número de confetes
