@@ -1,4 +1,13 @@
 
+function uncheckOtherCheckbox(checkboxId) {
+  const checkboxes = document.querySelectorAll('.checkbox');
+  checkboxes.forEach(cb => {
+      if (cb.id !== checkboxId) {
+          cb.checked = false;
+      }
+  });
+}
+
 function adicionarConfetes() {
   const container = document.getElementById('confetti-container');
   const numConfetes = 200; // Número de confetes
@@ -640,10 +649,19 @@ function sortearPersonagem() {
 }
   
   function iniciarSorteio(tipo) {
-    if (tipo === 'mapa') {
-      sortearOpcoes();
-    } else if (tipo === 'personagem') {
-      sortearPersonagem();
+    const checkboxes = document.querySelectorAll('.checkbox');  
+    let algumaSelecionada = false;
+    checkboxes.forEach(cb => {
+        if (cb.checked) {
+            algumaSelecionada = true;
+        }
+    });
+    if (algumaSelecionada) {
+        if (tipo === 'mapa') {
+            sortearOpcoes();
+        } else if (tipo === 'personagem') {
+            sortearPersonagem();
+        }
     }
   }
   
