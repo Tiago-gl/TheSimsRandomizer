@@ -220,20 +220,33 @@ function escolherAleatoriamente(opcoes) {
     Ótimo_solo: 'img/traco_lote/Trait_TS4_Great_Soil.webp',
   };
 
-  function selecionarTracoLote() {
+  function selecionarTipoLote(tipo) {
+    if (tipo === 'residencial') {
+      return escolherAleatoriamente(['Residencial', 'Residencial Assombrado', 'Residencial Compacto', 'Residencial Alugado']);
+    } else if (tipo === 'todos') {
+      const tiposDisponiveis = Object.keys(tipo_lote);
+      return escolherAleatoriamente(tiposDisponiveis);
+    } else {
+      return tipo;
+    }
+  }
+  
+  function selecionarTracoLote(apenasResidencial = false) {
     const quantidadeSelecionada = 3;
     const tracosSelecionados = new Set(); // Usaremos um conjunto para garantir que não haja traços repetidos
-  
+    
+    let tracosDisponiveis = apenasResidencial ? Object.keys(tracoResidencia) : Object.keys(traco_lote);
+    
     // Continuaremos selecionando traços até termos a quantidade desejada
     while (tracosSelecionados.size < quantidadeSelecionada) {
-        const tracoAleatorio = escolherAleatoriamente(Object.keys(traco_lote));
-        tracosSelecionados.add(tracoAleatorio);
+      const tracoAleatorio = escolherAleatoriamente(tracosDisponiveis);
+      tracosSelecionados.add(tracoAleatorio);
     }
-  
+    
     // Convertemos o conjunto de volta para um array antes de retornar
     return Array.from(tracosSelecionados);
-};
-
+  }
+  
   const orcamento = [
     '20 mil',
     '40 mil',
@@ -495,7 +508,6 @@ function exibirImagemAspiracaoChild(aspiracaoKey) {
   return img;
 }
 
-
   let sorteioIntervalOpcoes;
   let sorteioIntervalPersonagem;
   
@@ -503,11 +515,14 @@ function exibirImagemAspiracaoChild(aspiracaoKey) {
     const tempoSorteio = 3000; // 3 segundos de sorteio (3000 milissegundos)
     const tempoTotal = Date.now() + tempoSorteio;
   
+    const checkboxResidencial = document.getElementById('btn-menu');
+    const tipo = checkboxResidencial.checked ? 'residencial' : 'todos'; // Verifica se a checkbox residencial está marcada
+  
     sorteioIntervalOpcoes = setInterval(function() {
       const opcoesSorteadas = {
         Mapa: escolherAleatoriamente(Object.keys(mapas)), // Sorteie apenas o nome do mapa
         Terreno: escolherAleatoriamente(terreno),
-        Tipo: escolherAleatoriamente(tipo_lote),
+        Tipo: selecionarTipoLote(tipo), // Passa o tipo para a função selecionarTipoLote
         Traços: selecionarTracoLote(),
         Desafios: selecionarDesafios(),
         Orcamento: escolherAleatoriamente(orcamento),
@@ -521,7 +536,7 @@ function exibirImagemAspiracaoChild(aspiracaoKey) {
         sorteioAcabou();
       }
     }, 100);
-}
+  }
 
 function exibirAnimacaoPorSorteio(opcoesSorteadas) {
   const animationDiv = document.getElementById('animation');
