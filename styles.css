@@ -27,6 +27,33 @@ html{
     margin: 10px;
 }
 
+.checkboxes {
+    background-color: #479451;
+    padding: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: #fff;
+    gap: 10px;
+    margin: 10px;
+}
+
+.checkboxes label {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.checkbox {
+    width: 20px;
+    height: 20px;
+    accent-color: green;
+    border-radius: 50%;
+    border: 10px solid #007A33;
+    cursor: pointer;
+}
+
 .dica{
     background-color: #d1ecf1;
     color: #0c5460;
@@ -181,6 +208,12 @@ button:hover {
         margin-bottom: 10px;
     }
 
+    .checkboxes {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    
     .columns {
         flex-direction: column;
         align-items: center;
