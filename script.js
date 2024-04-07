@@ -171,6 +171,46 @@ function escolherAleatoriamente(opcoes) {
     Ótimo_solo: 'img/traco_lote/Trait_TS4_Great_Soil.webp',
   };
 
+  const tracoResidencia = {
+    Acustica_excelente : 'img/traco_lote/Trait_TS4_Great_Acoustics.webp',
+    Ambiente_agradavel : 'img/traco_lote/Trait_TS4_Convival.webp',
+    Aspecto_ensolarado : 'img/traco_lote/Trait_TS4_Sunny_Aspect.webp',
+    Aura_romantica : 'img/traco_lote/Trait_TS4_Romantic_Aura.webp',
+    Boas_aulas : 'img/traco_lote/Trait_TS4_Bookworm.webp',
+    Brincadeira : 'img/traco_lote/Trait_TS4_Child27s_Play.webp',
+    Brisa_revigorante : 'img/traco_lote/Trait_TS4_Breezing_Braces.webp',
+    Casa_de_celebridade : 'img/traco_lote/Trait_TS4_Celebrity_Home.webp',
+    Casual_nudety : 'img/traco_lote/Trait_TS4_Clothing_Optional.webp',
+    Conexão_vampirica : 'img/traco_lote/Trait_TS4_Vampire_Nexus.webp',
+    Covil_de_ciencia : 'img/traco_lote/Trait_TS4_Science_Lair.webp',
+    Covil_vampirico_registrado : 'img/traco_lote/Trait_TS4_Vampire_Lair.webp',
+    Caozinha_do_chef: 'img/traco_lote/Trait_TS4_Chef27s_Kitchen.webp',
+    Domestico: 'img/traco_lote/Trait_TS4_Domestic.webp',
+    Linha_ley: 'img/traco_lote/Trait_TS4_On_Ley_Line.webp',
+    Linha_ley_sombria: 'img/traco_lote/TS4_Trait_On_A_Dark_Ley_Line.webp',
+    Espiritos: 'img/traco_lote/Trait_TS4_Island_Spirits.webp',
+    Estudio_domestico: 'img/traco_lote/Trait_TS4_Home_Studio.webp',
+    Fada_das_moedas: 'img/traco_lote/Trait_TS4_Penny_Pixies.webp',
+    Geotermico: 'img/traco_lote/Trait_TS4_Geothermal.webp',
+    Gnomos: 'img/traco_lote/Trait_TS4_Gnomes.webp',
+    Habitação_particular: 'img/traco_lote/Trait_TS4_Private_Dwelling.webp',
+    Hypersexual: 'img/traco_lote/28The_Sims_429.webp',
+    Internet_rapida: 'img/traco_lote/Trait_TS4_Fast_Internet.webp',
+    Local_de_estudo: 'img/traco_lote/Trait_TS4_Study_Spot.webp',
+    Local_de_festas: 'img/traco_lote/Trait_TS4_Party_Place.webp',
+    Local_ecologico: 'img/traco_lote/Trait_TS4_Eco_Lot.webp',
+    Luz_natural: 'img/traco_lote/Trait_TS4_Natural_Light.webp',
+    Paz_e_tranquilidade: 'img/traco_lote/Trait_TS4_Peace_and_Quiet.webp',
+    Encontro_cães: 'img/traco_lote/Trait_TS4_Dog_Hangout.webp',
+    Encontro_gatos: 'img/traco_lote/Trait_TS4_Cat_Hangout.webp',
+    Poço_natural: 'img/traco_lote/Trait_TS4_Natural_Well.webp',
+    Vibração_maldosa: 'img/traco_lote/Trait_TS4_Mean_Vibe.webp',
+    Vizinhança_adolecente: 'img/traco_lote/TeenHangout.webp',
+    Área_de_reprodução: 'img/traco_lote/Trait_TS4_Breeding_Grounds.webp',
+    Área_de_treinamento: 'img/traco_lote/The_Sims_4_Pet_Training_Icon.webp',
+    Ótimo_solo: 'img/traco_lote/Trait_TS4_Great_Soil.webp',
+  };
+
   function selecionarTracoLote() {
     const quantidadeSelecionada = 3;
     const tracosSelecionados = new Set(); // Usaremos um conjunto para garantir que não haja traços repetidos
