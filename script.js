@@ -234,12 +234,11 @@ function escolherAleatoriamente(opcoes) {
     if (tipo === 'residencial') {
       return escolherAleatoriamente(['Residencial', 'Residencial Assombrado', 'Residencial Compacto', 'Residencial Alugado']);
     } else if (tipo === 'todos') {
-      const tiposDisponiveis = Object.keys(tipo_lote);
-      return escolherAleatoriamente(tiposDisponiveis);
+      return escolherAleatoriamente(tipo_lote);
     } else {
       return tipo;
     }
-  }
+}
   
   function selecionarTracoLote(apenasResidencial = false) {
     const quantidadeSelecionada = 3;
@@ -533,7 +532,7 @@ function exibirImagemAspiracaoChild(aspiracaoKey) {
         Mapa: escolherAleatoriamente(Object.keys(mapas)), // Sorteie apenas o nome do mapa
         Terreno: escolherAleatoriamente(terreno),
         Tipo: selecionarTipoLote(tipo), // Passa o tipo para a função selecionarTipoLote
-        Traços: selecionarTracoLote(),
+        Traços: selecionarTracoLote(tipo === 'residencial'), // Ajusta a seleção de traços com base no tipo de lote
         Desafios: selecionarDesafios(),
         Orcamento: escolherAleatoriamente(orcamento),
       };
