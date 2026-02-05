@@ -563,7 +563,7 @@ function exibirImagemAspiracaoChild(aspiracaoKey) {
         Mapa: escolherAleatoriamente(Object.keys(mapas)), // Sorteie apenas o nome do mapa
         Terreno: escolherAleatoriamente(terreno),
         Tipo: selecionarTipoLote(tipo), // Passa o tipo para a fun????o selecionarTipoLote
-        Tra??os: selecionarTracoLote(tipo === 'residencial'), // Ajusta a sele????o de tra??os com base no tipo de lote
+        'Traços': selecionarTracoLote(tipo === 'residencial'), // Ajusta a seleção de traços com base no tipo de lote
         Desafios: selecionarDesafios(),
         Orcamento: escolherAleatoriamente(orcamento),
       };
