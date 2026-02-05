@@ -493,6 +493,7 @@ function criarPersonagens(quantidadeMoradores) {
 function exibirImagemSexo(sexo) {
   const img = document.createElement('img');
   img.src = sexoChar[sexo];
+  img.classList.add('icone-img');
   return img;
 }
 
@@ -500,6 +501,7 @@ function exibirImagemTipoSim(tipo) {
   const img = document.createElement('img');
   img.src = tipoSim[tipo];
   img.title = tipoSim[tipo];
+  img.classList.add('icone-img');
   return img;
 }
 
@@ -507,6 +509,7 @@ function exibirImagemAspiracao(aspiracaoKey) {
   const img = document.createElement('img');
   img.src = aspiracao[aspiracaoKey];
   img.title = aspiracaoKey; // Usaremos a chave como título
+  img.classList.add('icone-img');
   return img;
 }
 
@@ -514,37 +517,62 @@ function exibirImagemAspiracaoChild(aspiracaoKey) {
   const img = document.createElement('img');
   img.src = aspiracaoChild[aspiracaoKey];
   img.title = aspiracaoKey;
+  img.classList.add('icone-img');
+  img.classList.add('icone-img');
   return img;
 }
 
+  const TEMPO_SORTEIO = 3000;
   let sorteioIntervalOpcoes;
   let sorteioIntervalPersonagem;
-  
+  let sorteioMapaAtivo = false;
+  let sorteioPersonagemAtivo = false;
+
+  function mostrarAnimacaoSorteio(elementId, mensagem) {
+    const animationDiv = document.getElementById(elementId);
+    animationDiv.innerHTML = '';
+
+    const loader = document.createElement('div');
+    loader.classList.add('draw-loader');
+
+    const spinner = document.createElement('div');
+    spinner.classList.add('draw-spinner');
+
+    const texto = document.createElement('p');
+    texto.textContent = mensagem;
+
+    loader.appendChild(spinner);
+    loader.appendChild(texto);
+    animationDiv.appendChild(loader);
+  }
+
   function sortearOpcoes() {
-    const tempoSorteio = 3000; // 3 segundos de sorteio (3000 milissegundos)
-    const tempoTotal = Date.now() + tempoSorteio;
-  
+    if (sorteioMapaAtivo) return;
+    sorteioMapaAtivo = true;
+
+    const button = document.getElementById('sorteio1');
+    if (button) button.disabled = true;
+
     const checkboxResidencial = document.getElementById('btn-menu');
-    const tipo = checkboxResidencial.checked ? 'residencial' : 'todos'; // Verifica se a checkbox residencial está marcada
-  
-    sorteioIntervalOpcoes = setInterval(function() {
+    const tipo = checkboxResidencial.checked ? 'residencial' : 'todos'; // Verifica se a checkbox residencial est?? marcada
+
+    mostrarAnimacaoSorteio('animation', 'Sorteando mapa e lote...');
+
+    setTimeout(function() {
       const opcoesSorteadas = {
         Mapa: escolherAleatoriamente(Object.keys(mapas)), // Sorteie apenas o nome do mapa
         Terreno: escolherAleatoriamente(terreno),
-        Tipo: selecionarTipoLote(tipo), // Passa o tipo para a função selecionarTipoLote
-        Traços: selecionarTracoLote(tipo === 'residencial'), // Ajusta a seleção de traços com base no tipo de lote
+        Tipo: selecionarTipoLote(tipo), // Passa o tipo para a fun????o selecionarTipoLote
+        Tra??os: selecionarTracoLote(tipo === 'residencial'), // Ajusta a sele????o de tra??os com base no tipo de lote
         Desafios: selecionarDesafios(),
         Orcamento: escolherAleatoriamente(orcamento),
       };
-  
+
       exibirAnimacaoPorSorteio(opcoesSorteadas);
-  
-      // Verificar se o tempo total já passou
-      if (Date.now() > tempoTotal) {
-        clearInterval(sorteioIntervalOpcoes);
-        sorteioAcabou();
-      }
-    }, 100);
+      sorteioAcabou();
+      sorteioMapaAtivo = false;
+      if (button) button.disabled = false;
+    }, TEMPO_SORTEIO);
   }
 
 function exibirAnimacaoPorSorteio(opcoesSorteadas) {
@@ -569,6 +597,7 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
         const mapaImagem = document.createElement('img');
         mapaImagem.src = mapas[mapa];
         mapaImagem.title = mapa;
+        mapaImagem.classList.add('mapa-img');
         sorteioDiv.appendChild(mapaImagem);
         }
     } else if (sorteio === 'Traços') {
@@ -579,6 +608,7 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
                 const tracoImagem = document.createElement('img');
                 tracoImagem.src = traco_lote[traco];
                 tracoImagem.title = traco;
+                tracoImagem.classList.add('icone-img');
                 sorteioDiv.appendChild(tracoImagem);
             }
         } 
@@ -588,6 +618,7 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
             const desafioImagem = document.createElement('img');
             desafioImagem.src = desafio.imagem;
             desafioImagem.title = desafio.nome;
+            desafioImagem.classList.add('icone-img');
             sorteioDiv.appendChild(desafioImagem);
         }
     } else {
@@ -600,10 +631,15 @@ function exibirAnimacaoPorSorteio(opcoesSorteadas) {
 }
   
 function sortearPersonagem() {
-  const tempoSorteio = 3000; // 5 segundos de sorteio (5000 milissegundos)
-  const tempoTotal = Date.now() + tempoSorteio;
+  if (sorteioPersonagemAtivo) return;
+  sorteioPersonagemAtivo = true;
 
-  sorteioIntervalPersonagem = setInterval(function() {
+  const button = document.getElementById('sorteio2');
+  if (button) button.disabled = true;
+
+  mostrarAnimacaoSorteio('animationPersonagem', 'Sorteando personagem...');
+
+  setTimeout(function() {
     const quantidadeMoradores = parseInt(escolherAleatoriamente(quant_moradores));
     let personagensSorteados = criarPersonagens(quantidadeMoradores);
 
@@ -634,13 +670,13 @@ function sortearPersonagem() {
 
       for (const key in personagem) {
         if (key === 'sexo') {
-          continue; // Já exibimos a imagem do sexo, então passamos para a próxima propriedade
+          continue; // J?? exibimos a imagem do sexo, ent??o passamos para a pr??xima propriedade
         }
         if (key === 'orientacao' && personagem[key] === '') {
-          continue; // Pular a criação do elemento se a orientação estiver vazia
+          continue; // Pular a cria????o do elemento se a orienta????o estiver vazia
         }
         if (key === 'aspiracao' && personagem[key] === '') {
-          continue; // Pular a criação do elemento se a aspiração estiver vazia
+          continue; // Pular a cria????o do elemento se a aspira????o estiver vazia
         }
         if (key === 'tipo') {
           const tipoImg = exibirImagemTipoSim(personagem[key]);
@@ -648,14 +684,14 @@ function sortearPersonagem() {
           continue;
         }
         if (key === 'aspiracao') {
-          const aspiracaoImg = personagem.idade === 'Criança' ? exibirImagemAspiracaoChild(personagem[key]) : exibirImagemAspiracao(personagem[key]);
+          const aspiracaoImg = personagem.idade === 'Crian??a' ? exibirImagemAspiracaoChild(personagem[key]) : exibirImagemAspiracao(personagem[key]);
           aspiracaoImg.style.display = 'block'; // Adicionar estilo para exibir a imagem em uma nova linha
           aspiracaoImg.style.marginLeft = 'auto'; // Centralizar a imagem
           aspiracaoImg.style.marginRight = 'auto'; // Centralizar a imagem
           personagemDiv.appendChild(aspiracaoImg);
           continue;
       }
-        
+
         const p = document.createElement('p');
         p.textContent = `${key}: ${personagem[key]}`;
         personagemDiv.appendChild(p);
@@ -664,12 +700,10 @@ function sortearPersonagem() {
       animationDiv.appendChild(personagemDiv);
     });
 
-    // Verificar se o tempo total já passou
-    if (Date.now() > tempoTotal) {
-      pararSorteio('personagem');
-      sorteioAcabou();
-    }
-  }, 100);
+    sorteioAcabou();
+    sorteioPersonagemAtivo = false;
+    if (button) button.disabled = false;
+  }, TEMPO_SORTEIO);
 }
   
   function iniciarSorteio(tipo) {

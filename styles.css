@@ -74,7 +74,7 @@ body::after {
 .page {
   position: relative;
   z-index: 1;
-  max-width: 1200px;
+  max-width: 1280px;
   margin: 0 auto;
   padding: 28px 24px 40px;
   display: flex;
@@ -129,7 +129,7 @@ body::after {
   color: var(--text);
 }
 
-.checkboxes label {
+.checkbox-card {
   display: flex;
   gap: 10px;
   align-items: center;
@@ -139,6 +139,11 @@ body::after {
   border-radius: 12px;
   cursor: pointer;
   transition: border 0.2s ease, background 0.2s ease, transform 0.2s ease;
+}
+
+.checkbox-card label {
+  cursor: pointer;
+  flex: 1;
 }
 
 .checkbox {
@@ -172,7 +177,7 @@ body::after {
   outline-offset: 2px;
 }
 
-.checkbox:checked + label {
+.checkbox-card:has(input:checked) {
   border-color: rgba(246, 215, 123, 0.6);
   background: rgba(246, 215, 123, 0.12);
   transform: translateY(-1px);
@@ -189,7 +194,7 @@ body::after {
 
 .columns {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
   gap: 18px;
 }
 
@@ -219,7 +224,8 @@ body::after {
 
 .animation {
   width: 100%;
-  min-height: 220px;
+  min-height: 320px;
+  max-height: 520px;
   font-size: 16px;
   padding: 14px;
   border: 1px dashed rgba(255, 255, 255, 0.25);
@@ -229,6 +235,7 @@ body::after {
   gap: 12px;
   align-content: start;
   background: rgba(255, 255, 255, 0.03);
+  overflow-y: auto;
 }
 
 .animation p {
@@ -258,11 +265,49 @@ body::after {
 }
 
 .animation img {
-  max-width: 160px;
-  width: 100%;
+  width: auto;
+  max-width: 220px;
   height: auto;
   object-fit: contain;
   filter: drop-shadow(0 6px 10px rgba(0, 0, 0, 0.25));
+}
+
+.animation img.icone-img {
+  max-width: 120px;
+}
+
+.animation img.mapa-img {
+  max-width: 260px;
+}
+
+.animation .personagem img {
+  max-width: 120px;
+}
+
+.draw-loader {
+  grid-column: 1 / -1;
+  min-height: 260px;
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.draw-spinner {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  border: 6px solid rgba(246, 215, 123, 0.25);
+  border-top-color: var(--accent);
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 button {
@@ -287,6 +332,13 @@ button:hover {
 button:active {
   transform: translateY(0);
   box-shadow: 0 8px 14px rgba(0, 0, 0, 0.2);
+}
+
+button:disabled {
+  cursor: not-allowed;
+  filter: grayscale(20%);
+  box-shadow: none;
+  opacity: 0.7;
 }
 
 #confetti-container {
@@ -380,6 +432,16 @@ button:active {
   }
 }
 
+@media (min-width: 1100px) {
+  .columns {
+    grid-template-columns: repeat(2, minmax(420px, 1fr));
+  }
+
+  .animation {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
 @media (max-width: 600px) {
   .page {
     padding: 22px 18px 32px;
@@ -391,6 +453,11 @@ button:active {
 
   .columns {
     grid-template-columns: 1fr;
+  }
+
+  .animation {
+    min-height: 260px;
+    max-height: 460px;
   }
 
   .footer {
