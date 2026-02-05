@@ -9,30 +9,32 @@
         <script src="script.js"></script>
     </head>
     <body>
-        <div class="header">
-            <img class="logo" src="./img/logo_thesims.png">
-            <h1>Sorteio de Vida The Sims 4</h1>
-        </div>
-        <h3 class="warning">Aviso, este programa leva em consideração todas as expansões do jogo! (incluindo o WW)</h1>
-        <div class="checkboxes">
-            <input type="checkbox" id="btn-menu" value="residencial" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu'); toggleDicaVisibility()">
-            <label for="btn-menu">Usar somente lotes residenciais</label>
-            <input type="checkbox" id="btn-menu2" value="todos" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu2'); toggleDicaVisibility()">
-            <label for="btn-menu2">Usar todos os tipos de lotes</label>
-        </div>
-        <h4 style="display: none;" id="dica" class="dica">Dica de jogo: Caso o lote sorteado não seja residencial, fica mais divertido e desafiador morar "clandestinamente" no lote sorteado, basta somente comprar um terreno vazio como residencial mas usar o terreno principal como casa mesmo</h4>
-        <div class="columns">
-            <div id="conteiner" class="container1">
-                <h2>Mapa Aleatório</h2>
-                <div id="animation" class="animation"></div>
-                <button id="sorteio1" onclick="iniciarSorteio('mapa')">Iniciar Sorteio</button>
+        <main class="page">
+            <div class="header">
+                <img class="logo" src="./img/logo_thesims.png">
+                <h1>Sorteio de Vida The Sims 4</h1>
             </div>
-            <div class="container">
-                <h2>Personagem Aleatório</h2>
-                <div id="animationPersonagem" class="animation"></div>
-                <button id="sorteio2" onclick="iniciarSorteio('personagem')">Iniciar Sorteio</button>
+            <h3 class="warning">Aviso, este programa leva em consideração todas as expansões do jogo! (incluindo o WW)</h3>
+            <div class="checkboxes">
+                <input type="checkbox" id="btn-menu" value="residencial" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu'); toggleDicaVisibility()">
+                <label for="btn-menu">Usar somente lotes residenciais</label>
+                <input type="checkbox" id="btn-menu2" value="todos" class="checkbox" name="lot-type" onclick="uncheckOtherCheckbox('btn-menu2'); toggleDicaVisibility()">
+                <label for="btn-menu2">Usar todos os tipos de lotes</label>
             </div>
-        </div>
+            <h4 style="display: none;" id="dica" class="dica">Dica de jogo: Caso o lote sorteado não seja residencial, fica mais divertido e desafiador morar "clandestinamente" no lote sorteado, basta somente comprar um terreno vazio como residencial mas usar o terreno principal como casa mesmo</h4>
+            <div class="columns">
+                <div id="conteiner" class="container1 card">
+                    <h2>Mapa Aleatório</h2>
+                    <div id="animation" class="animation"></div>
+                    <button id="sorteio1" onclick="iniciarSorteio('mapa')">Iniciar Sorteio</button>
+                </div>
+                <div class="container card">
+                    <h2>Personagem Aleatório</h2>
+                    <div id="animationPersonagem" class="animation"></div>
+                    <button id="sorteio2" onclick="iniciarSorteio('personagem')">Iniciar Sorteio</button>
+                </div>
+            </div>
+        </main>
         <div id="confetti-container"></div>
         <footer class="footer">
             <p>Desenvolvido por Hilda Helena e Tiago Gomes</p>
